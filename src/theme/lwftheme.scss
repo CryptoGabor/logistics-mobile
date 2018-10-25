@@ -1,0 +1,198 @@
+
+[orange] {
+    background-color: color($colors, lwf-orange) !important;
+    color: color($colors, lwf-orange-text) !important;
+}
+
+[blue] {
+    background-color: color($colors, lwf-blue) !important;
+    color: #fafafa !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[underline] {
+    border-bottom: solid 3px color($colors, lwf-orange) !important;
+    padding-bottom: 5px;
+    width: 20px;
+    background: transparent;
+}
+
+[bold] {
+    font-weight: bold;
+}
+
+[text-center] {
+    text-align: center;
+}
+
+[center] {
+    justify-content: center;
+    align-items: center;
+}
+
+[justify-center] {
+    justify-content: center;
+}
+
+[justify-end] {
+    justify-content: flex-end;
+}
+
+[justify-between] {
+    justify-content: space-between;
+}
+
+[justify-around] {
+    justify-content: space-around;
+}
+
+[align-items-start] {
+    align-items: flex-start;
+}
+
+[align-items-center] {
+    align-items: center;
+}
+
+[align-items-stretch] {
+    align-items: stretch;
+}
+
+[align-items-end] {
+    align-items: flex-end;
+}
+
+[align-self-start] {
+    align-self: flex-start;
+}
+
+[align-self-center] {
+    align-self: center;
+}
+
+[align-self-end] {
+    align-self: flex-end;
+}
+
+[flex-wide] {
+    flex-basis: 100%;
+}
+
+[tall] {
+    height: 100%;
+}
+
+[wide] {
+    width: 100%;
+}
+
+[column] {
+    flex-direction: column;
+}
+
+[flex] {
+    display: flex;
+}
+
+[flex-wrap] {
+    flex-wrap: wrap;
+}
+
+[flex-one] {
+    flex: 1;
+}
+
+[no-wrap] {
+    flex-wrap: nowrap;
+}
+
+[lwf-label-input] {
+    font-size: 0.8em;
+    color: #191919;
+}
+
+.button-back {
+    margin-right: 10px;
+}
+
+[highlight] {
+    color: color($colors, lwf-light-blue);
+    font-weight: 700;
+}
+
+
+/* MAIN DASHBOARD - Move to page style*/
+.logo {
+    background-image: url("../assets/images/logo-white1.svg");
+    background-position: center;
+    background-size: 180px;
+    background-repeat: no-repeat;
+    background-color: color($colors, lwf-light-blue);
+    min-height:20%;
+}
+
+.dashboard-container {
+    background-image: url("../assets/images/tablet_background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-origin: border-box;
+    height:80%;
+}
+.start-btn{
+    margin-top:100px;
+}
+.button-separator {
+    margin: 30px 0;
+    [ion-button] {
+        padding: 0 50px !important;
+    }
+}
+
+/* All? */
+.form-container {
+    // margin-top: 70px;
+}
+
+/* INTERNAL PAGES */
+.call-to-action {
+    text-align: center;
+    font-weight: bold;
+    color: color($colors, lwf-blue) !important;
+    margin: 10px auto 0 auto;
+    font-size:1.7rem;
+    text-transform: uppercase;
+    ion-icon{
+        margin-left:-20px;
+    }
+}
+
+hr.bottom-hr-orange {
+    width: 35px;
+    height: 3px;
+    border: 0;
+    border-radius: 2px;
+    opacity: 0.8;
+    background: #F7A800 !important;
+}
+
+hr.hr-small{
+    width:20px;
+}
+
+
+/* TEST */
+.test-block {
+    position: absolute;
+    top: 20px;
+}
+
+$elements: 10;
+@for $i from 0 to $elements {
+    .test-block:nth-child(#{$i}) {
+        right: $i * 35px;
+    }
+}

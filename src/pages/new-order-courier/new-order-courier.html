@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>ACCEPT ORDER</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <section id="timer">
+        <timer-progress *ngIf="showTimer"
+                        #countdownTimerProgress
+                        [timeInSeconds]="0"
+                        (accepted)="acceptOrder()"
+                        (refused)="refuseOrder()"></timer-progress>
+    </section>
+    <div *ngIf="order">
+        <section id="order-summary">
+            <section id="package" flex flex-wrap>
+                <img src="assets/images/package.svg">
+                <div class="title">Package</div>
+                <div class="info" flex-wide>
+                    <div *ngIf="order.numberOfSmallBoxes">
+                        <strong>{{order.numberOfSmallBoxes}} Small</strong> (< 5 Kg)
+                    </div>
+                    <div *ngIf="order.numberOfMediumBoxes">
+                        <strong>{{order.numberOfMediumBoxes}} Medium</strong> (< 10 Kg)
+                    </div>
+                    <div *ngIf="order.numberOfLargeBoxes">
+                        <strong>{{order.numberOfLargeBoxes}} Large</strong> (>10 5 Kg)
+                    </div>
+                    <div *ngIf="order.notes"> NOTE: {{order.notes}}</div>
+                </div>
+            </section>
+            <section id="pickup" flex flex-wrap>
+                <img src="assets/images/pick-up.svg">
+                <div flex-one>
+                    <div class="title">Pick Up</div>
+                    <div class="date"> {{order.pickupFrom | time}}/{{order.pickupTo | time}}</div>
+                </div>
+                <!--IMAGE IF IS CUSTOMER ADDRESS-->
+                <img src="assets/images/icon-user-grey.svg">
+                <!---->
+                <div class="address" flex-wide>
+                    {{order.locationFromAddress}}
+                </div>
+            </section>
+            <section id="delivery" flex flex-wrap>
+                <img src="assets/images/dropoff.svg">
+                <div flex-one>
+                    <div class="title">Delivery</div>
+                    <div class="date"> {{order.deliveryFrom | time}}/{{order.deliveryTo | time}}</div>
+                </div>
+                <!--IMAGE IF IS CUSTOMER ADDRESS-->
+                <img src="assets/images/icon-user-grey.svg">
+                <!---->
+                <div class="address" flex-wide>
+                    {{order.locationToAddress}}
+                </div>
+            </section>
+
+            <div flex justify-between class="additional-info">
+                <div>Price <span>{{order.priceRange}} Bc</span></div>
+                <div>Route: <span> {{order.distance | distanceInKms}}</span></div>
+            </div>
+
+            <section id="customer-info" flex flex-wrap>
+                <img class="customer-image" src="assets/images/icon-user-blue.svg">
+                <div flex-one>
+                    <div class="title">Customer</div>
+                    <div class="date"> {{order.buyer.user.first_name}} {{order.buyer.user.last_name}}</div>
+                </div>
+                <button class="chat-btn" clear ion-button align-self-start>
+                    Chat
+                    <ion-icon name="md-chatboxes"></ion-icon>
+                </button>
+                <div class="feedback" flex-wide>
+                    Feedback: {{order.buyer.feedback}}/5
+                </div>
+            </section>
+        </section>
+    </div>
+</ion-content>

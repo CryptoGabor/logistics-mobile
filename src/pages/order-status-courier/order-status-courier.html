@@ -1,0 +1,153 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title><span translate>orderStatus.title</span></ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <div class="inner-container"
+         *ngIf="order">
+        <section id="order-info" flex justify-between>
+            <div class="order-id"> <span translate>orderStatus.orderN</span> {{order.id}}</div>
+            <div class="order-status"
+                 [ngStyle]="{'color:': font_color,
+                             'background-color': background_color}" translate>
+                orderStatus.{{order.state}}
+            </div>
+        </section>
+
+        <section *ngIf="order.state == 'DELIVERED' && !order.feedback.courier"
+                 id="leave-feedback-section">
+            <div flex flex-wide justify-center align-items-center>
+                <button flex-wide ion-button orange
+                        (click)="openFeedbackModal()">
+                    Leave Feedback
+                </button>
+            </div>
+        </section>
+
+        <section *ngIf="order.state == 'ACCEPTED' || order.state == 'TRANSIT' || order.state == 'TRANSIT-2'"
+                 id="pin-area">
+            <div class="pin-area-content">
+                <div flex justify-center align-items-center>
+                    <div class="pin-area-title" flex-one>
+                        Courier ID
+                    </div>
+                    <ion-icon name="ios-help-circle-outline" (click)="openTooltip('courierId')"></ion-icon>
+                </div>
+                <div class="pin-numbers" flex flex-wrap justify-center>
+                    <div class="courier-id">
+                        <div class="pin">{{order.courierPIN}}</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="order.state !== 'TRANSIT' && order.state !=='TRANSIT-2'" class="pin-area-content">
+                <div flex justify-center align-items-center>
+                    <div class="pin-area-title" flex-one>
+                        Collect ID
+                    </div>
+                    <ion-icon name="ios-help-circle-outline" (click)="openTooltip('collectId')"></ion-icon>
+                </div>
+                <div class="pin-numbers" flex flex-wrap justify-center>
+                    <div>
+                        <ion-input type="text"
+                                   placeholder="insert pin"
+                                   [maxlength]="pinLength"
+                                   [disabled]="order.state != 'ACCEPTED'"
+                                   [(ngModel)]="collectPIN"
+                                   (ionChange)="validateCollectPIN()"></ion-input>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="order.state == 'TRANSIT' || order.state == 'TRANSIT-2'" class="pin-area-content">
+                <div flex justify-center align-items-center>
+                    <div class="pin-area-title" flex-one>
+                        Delivery Confirmation
+                    </div>
+                    <ion-icon name="ios-help-circle-outline" (click)="openTooltip('deliveryId')"></ion-icon>
+                </div>
+                <div class="pin-numbers" flex flex-wrap justify-center>
+                    <div>
+                        <ion-input type="text"
+                                   placeholder="insert pin"
+                                   [maxlength]="pinLength"
+                                   [(ngModel)]="deliveryConfirmationPIN"
+                                   [disabled]="order.state != 'TRANSIT' && order.state != 'TRANSIT-2'"
+                                   (ionChange)="validateDeliveryConfirmationPIN()"></ion-input>
+                    </div>
+                    <button ion-button icon-only clear #optionPopover (click)="openOptions()">
+                        <ion-icon name="settings"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="order-summary">
+            <div class="title-bar">
+                Order Details
+            </div>
+
+            <section id="package" flex flex-wrap>
+                <img src="assets/images/package.svg">
+                <div class="title">Package</div>
+                <div class="info" flex-wide>
+                    <div *ngIf="order.numberOfSmallBoxes"><strong>{{order.numberOfSmallBoxes}} Small</strong> (< 5 Kg)
+                    </div>
+                    <div *ngIf="order.numberOfMediumBoxes"><strong>{{order.numberOfMediumBoxes}} Medium</strong> (< 10
+                        Kg)
+                    </div>
+                    <div *ngIf="order.numberOfLargeBoxes"><strong>{{order.numberOfLargeBoxes}} Large</strong> (>10 5 Kg)
+                    </div>
+                    <div *ngIf="order.notes"> NOTE: {{order.notes}}</div>
+                </div>
+            </section>
+            <section id="pickup" flex flex-wrap>
+                <img src="assets/images/pick-up.svg">
+                <div flex-one>
+                    <div class="title">Pick Up</div>
+                    <div class="date"> {{order.dateCreated | date:'yyyy-MM-dd'}} - {{order.pickupTo | time }}</div>
+                </div>
+                <div class="name" flex-wide>{{order.sender}}</div>
+                <div class="address" flex-wide>
+                    {{order.locationFromAddress}}
+                </div>
+            </section>
+            <section id="delivery" flex flex-wrap>
+                <img src="assets/images/dropoff.svg">
+                <div flex-one>
+                    <div class="title">Delivery</div>
+                    <div class="date"> {{order.dateCreated | date:'yyyy-MM-dd'}} - {{order.deliveryTo | time }}</div>
+                </div>
+                <div class="name" flex-wide>{{order.receiver}}</div>
+                <div class="address" flex-wide>
+                    {{order.locationToAddress}}
+                </div>
+            </section>
+            <div flex justify-between class="additional-info">
+                <div>Price <span>{{order.priceRange}} Bc</span></div>
+                <div>Route: <span>{{order.distance | distanceInKms}}</span></div>
+            </div>
+
+            <section id="customer-info" flex flex-wrap>
+                <img class="customer-image" src="assets/images/icon-user-blue.svg">
+                <div flex-one>
+                    <div class="title">Customer</div>
+                    <div class="date"> {{order.buyer.user.first_name}} {{order.buyer.user.last_name}}</div>
+                </div>
+                <button class="chat-btn" clear ion-button align-self-start>
+                    Chat
+                    <ion-icon name="md-chatboxes"></ion-icon>
+                </button>
+                <div class="feedback" flex-wide>
+                    Feedback: {{order.buyer.feedback}}/5
+                </div>
+            </section>
+
+        </section>
+
+    </div>
+
+</ion-content>

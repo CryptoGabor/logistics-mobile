@@ -1,0 +1,79 @@
+    <ion-content>
+    <div flex-wide class="logo">
+
+    </div>
+    <div class="call-to-action" flex flex-wrap justify-center>
+        <ion-icon class="button-back" name="arrow-round-back" goback></ion-icon>
+        <span translate>form.loginTitle</span>
+        <div flex-wide>
+            <hr class="bottom-hr-orange hr-small"/>
+        </div>
+    </div>
+    <div id="form-container">
+        <form [formGroup]="loginForm"
+              (ngSubmit)="login(loginForm)">
+
+
+            <ion-label color="lwf-light-blue" stacked><span translate>form.username</span></ion-label>
+            <div class="signup-input" flex flex-wide
+                 [class.invalid]="loginForm.controls['username'].hasError('required') &&
+                                  loginForm.controls['username'].touched ||
+                                  (loginForm.errors && loginForm.errors.notfound)">
+                <input type="text" flex-wide
+                       [placeholder]="'form.username' | translate"
+                       [class.invalid]="loginForm.controls['username'].hasError('required') &&
+                                        loginForm.controls['username'].touched"
+                       formControlName="username"/>
+            </div>
+            <ion-item no-lines class="error-message"
+                      *ngIf="loginForm.controls['username'].hasError('required') &&
+                             loginForm.controls['username'].touched">
+                *<span translate>form.usernameError</span>
+            </ion-item>
+
+            <ion-label color="lwf-light-blue" stacked><span translate>form.password</span></ion-label>
+            <div class="signup-input" flex flex-wide
+                 [class.invalid]="loginForm.controls['password'].hasError('required') &&
+                                  loginForm.controls['password'].touched ||
+                                  (loginForm.errors && loginForm.errors.notfound)">
+                <input type="password" flex-wide
+                       [placeholder]="'form.password' | translate"
+                       [class.invalid]="loginForm.controls['password'].hasError('required') &&
+                                        loginForm.controls['password'].touched"
+                       formControlName="password"/>
+            </div>
+            <ion-item no-lines class="error-message"
+                      *ngIf="loginForm.controls['password'].hasError('required') &&
+                             loginForm.controls['password'].touched">
+                *<span translate>form.passwordError</span>
+            </ion-item>
+
+            <ion-item no-lines class="error-message" *ngIf="loginForm.errors && loginForm.errors.notfound">
+                *<span translate>form.uNamePassError</span>
+            </ion-item>
+
+            <div flex center class="button-separator">
+                <button type="submit" bold ion-button color="lwf-blue" blue><span translate>buttons.login</span></button>
+            </div>
+
+        </form>
+        <div class="urls">
+            <div flex center>
+                <a href="#"><span translate>form.forgottenPassword</span></a>
+            </div>
+            <br>
+            <div flex center>
+                <span translate>form.termsMessage
+                    <a href="https://www.lwf.io/docs/terms.pdf" target="_blank">
+                        <span translate>form.termsLink</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div flex center class="button-separator">
+            <button gotopage="signup" bold ion-button orange><span translate>buttons.signup</span></button>
+        </div>
+    </div>
+
+</ion-content>

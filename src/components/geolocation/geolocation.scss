@@ -1,0 +1,18 @@
+geolocation {
+    .map-container {
+        width: 100vw;
+        height: 50vh;
+        background: #ededed;
+    }
+
+    .search-places {
+        height: 3.6rem;
+        margin: 0px 10px 0px 5px;
+        flex: 1;
+        border-radius: 3.6rem;
+        border: solid 1px #f7a800;
+        box-sizing: border-box;
+        padding: 0px 15px;
+        color: #1d5c9c;
+    }
+}

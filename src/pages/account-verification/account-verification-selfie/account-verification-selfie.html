@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title ><span translate>accountVerification.title</span></ion-title>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <form (ngSubmit)="upload(uploadForm)"
+          [formGroup]="uploadForm">
+        <div class="call-to-action" flex-wide>
+            <span translate>accountVerification.step3.title</span>
+            <hr class="bottom-hr-orange"/>
+        </div>
+        <div class="id-pic" flex column align-items-center justify-center (click)="getSelfie()">
+            <img class="camera-icon" src="assets/images/camera-icon.svg" alt="">
+            <img class="selfie-pic" [src]="SelfIDocImageSrc ? SelfIDocImageSrc : 'assets/images/selfie-pic.svg'" alt="">
+        </div>
+        <div *ngIf="uploadForm.get('nullSelfIDoc').errors
+                                            && uploadForm.get('nullSelfIDoc').errors.backend
+                                            && uploadForm.get('nullSelfIDoc').errors.backend.nullSelfIDoc"
+                   i18n>
+            {{uploadForm.get('nullSelfIDoc').errors.backend.nullSelfIDoc}}
+        </div>
+
+        <div *ngIf="uploadForm.get('invalidSelfIDoc').errors
+                                            && uploadForm.get('invalidSelfIDoc').errors.backend
+                                            && uploadForm.get('invalidSelfIDoc').errors.backend.invalidSelfIDoc"
+                   i18n>
+            {{uploadForm.get('invalidSelfIDoc').errors.backend.invalidSelfIDoc}}
+        </div>
+        <button bold block ion-button orange type="submit"><span translate>buttons.submit</span></button>
+    </form>
+    <div class="verification-info" translate>
+        accountVerification.step3.info
+        <p>"LWF {{textCode}}"</p>
+    </div>
+</ion-content>
+
+

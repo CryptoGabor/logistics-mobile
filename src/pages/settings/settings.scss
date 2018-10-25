@@ -1,0 +1,123 @@
+@import '../../theme/variables.scss';
+
+page-settings {
+    .call-to-action {
+        padding-top: 0;
+    }
+
+    .error-message {
+        align-items: flex-start;
+        padding: 0;
+        .label {
+            font-weight: 700;
+            margin: 0 0 10px 0 !important;
+            flex-basis: 100%;
+        }
+        min-height:15px;
+    }
+
+    #address {
+        padding: 10px 10px;
+        border-bottom: 5px solid color($colors, lwf-alternate-grey);
+        .settings-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        input[type='text'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+
+        }
+        ion-textarea {
+            border: 1px solid color($colors, lwf-light-grey);
+            min-height: 60px;
+        }
+        .text-input {
+            margin: 5px;
+        }
+        .label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            flex-basis: 100%;
+        }
+        .form-image {
+            margin: 0 10px 0 10px;
+            width: 30px;
+            img {
+                width: 100%;
+            }
+            ion-icon {
+                margin-left: 4px;
+                font-size: 35px;
+            }
+        }
+
+    }
+
+    #accept-private-company {
+        padding: 10px 10px;
+        border-bottom: 5px solid color($colors, lwf-alternate-grey);
+        ion-item {
+            flex-basis: 50%;
+        }
+        ion-checkbox {
+            margin: auto 10px;
+            &.invalid{
+                .checkbox-icon{
+                    border: 1px solid color($colors, lwf-red);
+                }
+            }
+        }
+        .error-message {
+            .label {
+                font-weight: 700;
+                margin-bottom: 5px;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    #price-per-km {
+        margin: 0 20px 30px 0;
+        padding: 10px 10px;
+        .price-input {
+            flex-basis: 45%;
+            margin: 5px 5px;
+        }
+        ion-label {
+            flex: 0;
+            flex-basis: 50px;
+            margin: auto 0;
+        }
+        ion-input {
+            width: 30px;
+            margin-left: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+            input {
+                padding: 3px 5px;
+                border: 1px solid color($colors, lwf-light-grey);
+                margin:0;
+            }
+        }
+
+        .error-message {
+            .label {
+                font-weight: 700;
+                margin-bottom: 5px;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    #submit {
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+}

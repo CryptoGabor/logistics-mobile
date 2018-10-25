@@ -1,0 +1,47 @@
+page-login{
+    .error-message {
+        align-items: flex-start;
+        padding: 0;
+        .label {
+            font-weight: 700;
+            margin: 0 0 0 0 !important;
+            flex-basis: 100%;
+        }
+        min-height: 15px;
+    }
+    .call-to-action{
+        height:30px;
+        padding:20px 0;
+    }
+    #form-container {
+        padding: 20px 30px;
+        background-color: #fff;
+        min-height:60%;
+        .signup-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        input[type='text'],
+        input[type='password'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+        }
+
+        .text-input {
+            margin: 5px;
+        }
+        .label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            flex-basis: 100%;
+        }
+    }
+}
+.urls{
+    text-align: center;
+}
+

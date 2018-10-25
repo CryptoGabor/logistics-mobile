@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>ORDER PAYMENT</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content *ngIf="order && wallet">
+    <section id="instructions">
+        <ol>
+            <li>You are about to send the request to all couriers</li>
+            <li>LWF select the first courier available</li>
+            <li>The corresponding credit between 10 and 30 Bc will be deducted</li>
+        </ol>
+        <div class="instruction-message">
+            Your request will be sent to all the couriers found.
+            The request will be handled by the first available courier and you will pay the agreed price
+            <div>
+                <ion-label>Add details about delivery</ion-label>
+                <ion-textarea placeholder="Notes"
+                              [(ngModel)]="order.notes"></ion-textarea>
+            </div>
+        </div>
+    </section>
+    <section id="order-summary">
+        <div class="order-id"></div>
+        <section id="package" flex flex-wrap>
+            <img src="assets/images/package.svg">
+            <div class="title">Package</div>
+            <div class="info" flex-wide>
+                <div *ngIf="order.numberOfSmallBoxes"><strong>{{order.numberOfSmallBoxes}} Small</strong> (< 5 Kg)</div>
+                <div *ngIf="order.numberOfMediumBoxes"><strong>{{order.numberOfMediumBoxes}} Medium</strong> (< 10 Kg)
+                </div>
+                <div *ngIf="order.numberOfLargeBoxes"><strong>{{order.numberOfLargeBoxes}} Large</strong> (>10 5 Kg)
+                </div>
+                <div *ngIf="order.notes"> NOTE: {{order.notes}}</div>
+            </div>
+        </section>
+        <section id="pickup" flex flex-wrap>
+            <img src="assets/images/pick-up.svg">
+            <div>
+                <div class="title">Pick Up</div>
+                <div class="date"> {{ today | date:'yyyy-MM-dd'}} - {{order.pickupTo }}</div>
+            </div>
+            <div class="info" flex-wide>
+                {{order.locationFromAddress}}
+            </div>
+        </section>
+        <section id="delivery" flex flex-wrap>
+            <img src="assets/images/delivery.svg">
+            <div>
+                <div class="title">Delivery</div>
+                <div class="date"> {{today | date:'yyyy-MM-dd'}} - {{order.deliveryTo}}</div>
+            </div>
+            <div class="info" flex-wide>
+                {{order.locationToAddress}}
+            </div>
+        </section>
+
+        <div class="total-price"> Price <span>{{order.priceRange}} Bc</span></div>
+    </section>
+    <section id="action-btn">
+        <div class="pay-now">
+            <button *ngIf="wallet.credit >= order.priceRange"
+                    ion-button
+                    color="lwf-orange"
+                    mode="ios"
+                    block
+                    (click)="createAndPayOrder()">PAY NOW
+            </button>
+        </div>
+        <div class="cancel">
+            <button ion-button color="lwf-light-blue" outline block goback>Cancel</button>
+        </div>
+        <div class="terms-agreement">
+            Clicking on Pay Now you agree with <a>our terms</a> and ...
+        </div>
+    </section>
+</ion-content>

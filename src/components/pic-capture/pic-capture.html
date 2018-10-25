@@ -1,0 +1,6 @@
+<div flex center column>
+  <div flex-one *ngIf="test">
+    <img *ngIf="image" src="{{image}}" alt="">
+  </div>
+  <button ion-button orange (click)="getImage()">Cattura immagine</button>
+</div>

@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>NEW REQUEST</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-toolbar no-border class="credits-bar">
+        <div>Your Bundle Credits: <span> 15Bc</span></div>
+    </ion-toolbar>
+    <div *ngIf="courier">
+        <ion-toolbar no-border class="requests-toggle">
+            <div flex align-items-center justify-between>
+                <span> NEW REQUESTS: </span>
+                <ion-toggle [(ngModel)]="courier.enableNewRequests"
+                            (click)="toggleRequests()"
+                            color="lwf-orange"></ion-toggle>
+            </div>
+        </ion-toolbar>
+        <section *ngIf="!courier.enableNewRequests"
+                 id="requests-landing">
+            <div>
+                <h2 class="order-id">NEW REQUESTS</h2>
+                <p>
+                    Enable to show available requests in your area and view details to accept delivery.
+                </p>
+            </div>
+            <button ion-button color="lwf-light-blue" outline>
+                Service Settings
+            </button>
+        </section>
+        <section *ngIf="courier.enableNewRequests" id="request-list">
+            <div class="inner-container">
+                <ion-card *ngFor="let orderRequest of orderRequests;"
+                          (click)="orderDetail(orderRequest)"
+                          class="request-card">
+                    <ion-item>
+                        <div class="request-card-header" flex>
+                            <div class="request-order-id" flex align-items-start>
+                                <img src="assets/images/pick-up.svg">
+                                <h2 class="order-id">{{orderRequest.id}}</h2>
+                            </div>
+                            <div class="request-order-customer">
+                                <div><span translate>common.customer</span>:</div>
+                                <div>{{orderRequest.buyer.user.first_name}} {{orderRequest.buyer.user.last_name}}</div>
+                                <div>Feedback: <strong>{{orderRequest.buyer.feedback}}/5</strong></div>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="request-order-price">
+                        <span translate>common.price</span>:  <strong>{{orderRequest.priceRange}} Bc
+                        ({{orderRequest.priceRange}}$)</strong>
+                    </ion-item>
+                    <ion-card-content flex justify-between align-items-stretch>
+                        <div class="request-order-addresses">
+                            <ion-item>
+                                <div class="order-date">
+                                    <span translate>common.pickup</span>:
+                                    {{orderRequest.pickupFrom | time}}/{{orderRequest.pickupTo |time}}
+                                </div>
+                                <div flex-wide>{{orderRequest.locationFromAddress}}</div>
+                            </ion-item>
+                            <ion-item>
+                                <div class="order-date">
+                                    <span translate>common.delivery</span>:
+                                    {{orderRequest.deliveryFrom | time}}/{{orderRequest.deliveryTo |time}}
+                                </div>
+                                <div flex-wide>{{orderRequest.locationToAddress}}</div>
+                            </ion-item>
+                        </div>
+                        <div class="request-route-info">
+                            <div><span translate>requests.requestCard.route</span>:</div>
+                            <div>{{orderRequest.distance | distanceInKms}}</div>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+
+            </div>
+        </section>
+    </div>
+</ion-content>

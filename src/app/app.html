@@ -1,0 +1,19 @@
+<ion-menu side="right" [content]="lwfcontent" [persistent]="true">
+    <ion-content>
+        <ion-list>
+            <ion-item *ngIf="profile" (click)="navToHome()">HOME</ion-item>
+            <ion-item (click)="navToPage('AccountVerificationPage')">ACCOUNT</ion-item>
+            <ion-item *ngIf="profile && isCourier()" (click)="navToPage('WalletTabs')">WALLET</ion-item>
+            <ion-item *ngIf="profile && isCustomer()" (click)="navToPage('DepositPage')">WALLET</ion-item>
+            <ion-item *ngIf="profile && isCourier()"
+                    (click)="navToPage('SettingsPage')">SETTINGS</ion-item>
+            <ion-item logout menuClose>LOGOUT</ion-item>
+            <ion-item *ngIf="profile && isCourier() && canSwitchRole()"
+                      (click)="switchRole('CUSTOMER')">SWITCH TO CUSTOMER</ion-item>
+            <ion-item *ngIf="profile && isCustomer() && canSwitchRole()"
+                      (click)="switchRole('COURIER')">SWITCH TO COURIER</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #lwfcontent [root]="rootPage"></ion-nav>

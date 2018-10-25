@@ -1,0 +1,45 @@
+<ion-content>
+    <div ion-fixed flex center text-center tall>
+        <form *ngIf="profile" [formGroup]="mobileVerificationForm"
+              (ngSubmit)="processVerifyMobile(mobileVerificationForm)">
+            <div class="success-box" flex flex-wide flex-wrap justify-center align-items-start>
+                <div class="success-icon" flex-wide>
+                    <!-- <ion-icon name="ios-phone-portrait"></ion-icon> -->
+                    <img src="assets/images/mobile_icon.png" width="60px">
+                </div>
+
+                <div class="success-title" flex-wide>
+                    <span translate>form.confirmMobileTitle</span>
+                </div>
+                <div class="success-message" flex flex-wrap padding justify-center>
+                  <span flex-wide translate>
+                    form.confirmMobileMessage
+                  </span>
+
+                    <div class="signup-input" flex justify-center
+                         [class.invalid]="mobileVerificationForm.controls['code'].invalid &&
+                                          mobileVerificationForm.controls['code'].touched">
+                        <input type="text"
+                               placeholder="Mobile Code"
+                               [class.invalid]="mobileVerificationForm.controls['code'].invalid &&
+                                                mobileVerificationForm.controls['code'].touched"
+                               formControlName="code"/>
+                        <input hidden type="text" formControlName="email"/>
+                        <input hidden type="text" formControlName="username"/>
+                        <input hidden type="text" formControlName="password"/>
+                    </div>
+                    <ion-item no-lines class="error-message" flex-wide
+                              *ngIf="mobileVerificationForm.controls['code'].invalid &&
+                                     mobileVerificationForm.controls['code'].touched">
+                        *<span translate>form.confirmMobileError</span>
+                    </ion-item>
+
+                    <div flex center class="button-separator" flex-one>
+                        <button type="submit" bold ion-button color="lwf-orange" orange><span
+                            translate>buttons.submit</span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ion-content>

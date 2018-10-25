@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title ><span translate>accountVerification.title</span></ion-title>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <form (ngSubmit)="upload(uploadForm)"
+          [formGroup]="uploadForm">
+        <div class="call-to-action" flex-wide>
+            <span translate>accountVerification.step2.title</span>
+            <hr class="bottom-hr-orange"/>
+        </div>
+        <div flex>
+            <ion-item flex-wide>
+                <ion-select class="id-select" formControlName="idType" [placeholder]="'accountVerification.step2.select' | translate" interface="action-sheet">
+                    <ion-option value="id-1" translate>accountVerification.step2.bill</ion-option>
+                    <ion-option value="id-2" translate>accountVerification.step2.certificate</ion-option>
+                    <ion-option value="id-3" translate>accountVerification.step2.bank</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <div class="id-pic" flex column align-items-center justify-center (click)="getProofOfAddress()">
+            <img class="camera-icon" src="assets/images/camera-icon.svg" alt="">
+            <img [src]="ProofOfresidenceImageSrc ? ProofOfresidenceImageSrc : 'assets/images/address-pic.svg'" alt="">
+        </div>
+        <div *ngIf="uploadForm.get('nullProofOfresidence').errors
+                                        && uploadForm.get('nullProofOfresidence').errors.backend
+                                        && uploadForm.get('nullProofOfresidence').errors.backend.nullProofOfresidence"
+                   i18n>
+            {{uploadForm.get('nullProofOfresidence').errors.backend.nullProofOfresidence}}
+        </div>
+
+        <div *ngIf="uploadForm.get('invalidProofOfresidence').errors
+                                        && uploadForm.get('invalidProofOfresidence').errors.backend
+                                        && uploadForm.get('invalidProofOfresidence').errors.backend.invalidProofOfresidence"
+                   i18n>
+            {{uploadForm.get('invalidProofOfresidence').errors.backend.invalidProofOfresidence}}
+        </div>
+        <button bold ion-button orange type="submit"><span translate>buttons.submit</span></button>
+    </form>
+    <div class="verification-info" translate>
+        accountVerification.step2.info
+    </div>
+</ion-content>
+
+

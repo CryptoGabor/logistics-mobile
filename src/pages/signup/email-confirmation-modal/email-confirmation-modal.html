@@ -1,0 +1,34 @@
+<ion-content>
+    <div flex flex-wrap tall align-items-start>
+        <div class="call-to-action" flex-wide align-self-start>
+            REGISTRATION
+            <hr class="bottom-hr-orange"/>
+        </div>
+        <div flex flex-wrap flex-wide text-center>
+            <div class="success-box" flex flex-wrap flex-wide center>
+                <div class="success-icon">
+                    <!-- <ion-icon name="mail"></ion-icon> -->
+                    <img src="assets/images/email_icon.png" width="100px">
+                </div>
+
+                <div class="success-title" flex-wide>
+                    CONFERMA EMAIL
+                </div>
+                <div class="success-message" padding flex-wide align-self-center>
+                  <span>
+                    Abbiamo inviato una email di conferma
+                    all’indirizzo fornito.
+                    Per proseguire la registrazione, controlla la
+                    tua email e clicca sul link di conferma.
+                  </span>
+
+                    <div>
+                        <button bold ion-button color="lwf-blue" blue (click)="gotoStart()">
+                            Ho ricevuto la mail!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

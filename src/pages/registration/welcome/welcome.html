@@ -1,0 +1,36 @@
+<ion-content>
+    <div id="welcome" ion-fixed center text-center tall>
+        <ion-toolbar>
+            <ion-title><span translate>common.onBoardTitle</span></ion-title>
+            <button ion-button menuToggle right>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-toolbar>
+        <div class="inner-container" flex flex-wrap>
+            <section id="welcome-msg" flex-wide flex flex-wrap justify-center="">
+                <div class="call-to-action" flex-wide>
+                    <span translate>welcomePage.title</span>
+                    <hr class="bottom-hr-orange"/>
+                </div>
+                <div class="welcome-text" flex-wide translate>
+                    welcomePage.message1
+                </div>
+                <div flex-wide flex justify-center>
+                    <button ion-button color="lwf-blue" (click)="gotoHome()"><span translate>buttons.gotoHome</span></button>
+                </div>
+                <a href="#guide">
+                    <span translate>welcomePage.link</span>
+                </a>
+            </section>
+            <section id="become-courier" flex-wide align-self-end>
+                <img width="100" height="100" src="assets/images/icon-ist-del.svg"/>
+                <div translate>
+                    welcomePage.message2
+                </div>
+                <button ion-button color="lwf-orange" (click)="gotoAccountVerification()"><span translate>buttons.becomeCourier</span></button>
+                <div class="terms-agreement" translate>welcomePage.termsMessage <a
+                    href="https://www.lwf.io/docs/terms.pdf" target="_blank"><span translate>form.termsLink</span></a></div>
+            </section>
+        </div>
+    </div>
+</ion-content>

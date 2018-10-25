@@ -1,0 +1,166 @@
+{
+	"accountVerification": {
+		"notSubmitted": "Not Submitted",
+		"step1": {
+			"back": "Back",
+			"driverLic": "Driver License",
+			"front": "Front",
+			"idCard": "National ID Card",
+			"info": "Please click on front and back to take a picture of your selected ID\n",
+			"passport": "Passport",
+			"select": "Select your ID Document type",
+			"title": "ID CARD"
+		},
+		"step2": {
+			"bank": "Bank account statement",
+			"bill": "Utility Bill",
+			"certificate": "Proof of residence certification",
+			"info": "Please click on the box above to take a picture of your selected Proof of Residence\n",
+			"select": "Select your Proof of Residence Type",
+			"title": "ADDRESS"
+		},
+		"step3": {
+			"info": "You must take a picture of yourself with your ID and a paper with written the following text:\n",
+			"title": "SELFIE"
+		},
+		"submitted": "Submitted",
+		"text": "Please take a picture of the required documents.\nThey must be high quality pictures, the documents must be clear and readable.\nPlease don't upload blurry pictures.",
+		"title": "ACCOUNT VERIFICATION",
+		"verified": "Verified"
+	},
+	"buttons": {
+		"becomeCourier": "Become a Courier",
+		"gotoHome": "Go To Homepage",
+		"login": "Login",
+		"signup": "Sign Up",
+		"submit": "Submit",
+		"vote": "Vote"
+	},
+	"common": {
+		"courier": "Courier",
+		"customer": "Customer",
+		"delivery": "Delivery",
+		"historyLink": "Go To Order History",
+		"onBoard": "Send a parcel quickly with \na courier of LWF Network or \nbecome a courier and immediatly \nmake money with deliveries",
+		"onBoardTitle": "LWF INSTANT DELIVERY",
+		"pickup": "Pick-up",
+		"price": "Price",
+		"route": "Route"
+	},
+	"creditsbar": {
+		"title": "Your Bundle Credits"
+	},
+	"errors": {
+		"linkExpiredMessage": "We are sorry but your activation link is expired.\nPlease click the button to try again to signup.",
+		"linkExpiredTitle": "Link Expired"
+	},
+	"feedback": {
+		"placeholder": "Write a review",
+		"review": "Leave a feedback",
+		"title": "FEEDBACK"
+	},
+	"form": {
+		"DoB": "Date of Birth",
+		"DoBerror": "Date of Birth is required",
+		"address": "Address",
+		"addressError": "Address is required",
+		"city": "City",
+		"cityError": "City is required",
+		"confirmMobileError": "Code required or mismatch",
+		"confirmMobileMessage": "We sent an SMS with a confirmation code\nto the provided mobile number.\nEnter the code in the verification field.",
+		"confirmMobileTitle": "Confirm Mobile",
+		"confirmPass": "Confirm Password",
+		"confirmPassError": "Confirm password is required",
+		"country": "Country",
+		"countryError": "Country is required",
+		"countrySelect": "Select Your Country",
+		"email": "E-mail",
+		"emailError": "A valid e-mail address is required",
+		"firstName": "First Name",
+		"firstNameError": "First Name is required",
+		"forgottenPassword": "Forgotten Password?",
+		"lastName": "Last Name",
+		"lastNameError": "Last Name is required",
+		"loginTitle": "Login",
+		"mobile": "Mobile",
+		"mobileError1": "Mobile number is required",
+		"mobileError2": "Mobile number must be between 10 and 13 digits",
+		"mobilePlaceholder": "",
+		"mobilePrefix": "Code",
+		"optional": "(Optional)",
+		"password": "Password",
+		"passwordError": "Password is required",
+		"passwordError2": "Password must be at least 8 characters long",
+		"passwordError3": "Passwords do not match",
+		"region": "Region",
+		"regionError": "Region is required",
+		"registrationTitle": "Registration",
+		"ssn": "SSN",
+		"termsError": "Please click on the checkbox to agree with our terms",
+		"termsLink": "Terms of use",
+		"termsMessage": "Clicking Login you agree with our",
+		"termsMessage2": "Click on the checkbox to agree with our",
+		"uNamePassError": "Username or Password are incorrect",
+		"username": "Username",
+		"usernameError": "Username is required",
+		"usernameError2": "Username must be maximum 16 characters",
+		"zipCode": "Zip Code",
+		"zipCodeError": "Zip Code is required"
+	},
+	"home": {
+		"orderCard": {
+			"ACCEPTED": "ACCEPTED",
+			"DELIVERED": "DELIVERED"
+		},
+		"title": "HOME"
+	},
+	"homeCourier": {
+		"distance": "Distance",
+		"filterBy": "Order by",
+		"orderCard": {
+			"ACCEPTED": "ACCEPTED",
+			"DELIVERED": "DELIVERED"
+		},
+		"time": "Time",
+		"title": "MANAGE ORDERS"
+	},
+	"newOrder": {
+		"title": "NEW ORDER"
+	},
+	"orderHistory": {
+		"courier": "COURIER",
+		"customer": "CUSTOMER",
+		"price": "PRICE",
+		"status": "STATUS",
+		"title": "ORDER HISTORY"
+	},
+	"orderStatus": {
+		"ACCEPTED": "ACCEPTED",
+		"DELIVERED": "DELIVERED",
+		"NOT-DELIVERED": "NOT DELIVERED",
+		"TRANSIT": "TRANSIT",
+		"TRANSIT-2": "2nd TRANSIT",
+		"orderN": "Order N.",
+		"title": "ORDER DETAILS"
+	},
+	"requests": {
+		"requestCard": {
+			"customer": "Customer",
+			"delivery": "Delivery",
+			"pickup": "Pick-Up",
+			"price": "Price",
+			"route": "Route"
+		},
+		"title": "REQUESTS"
+	},
+	"settings": {
+		"title": "ADDRESS"
+	},
+	"welcomePage": {
+		"link": "Consult the guide",
+		"message1": "You can now request an express courier from LWF network to send or receive a package",
+		"message2": "Join LWF express courier network to start making money with deliveries.\nJust click on the button below to proceed with our verification process,                    it is going to take just few minutes.",
+		"termsMessage": "Clicking on the button you agree with our",
+		"title": "Welcome"
+	}
+}

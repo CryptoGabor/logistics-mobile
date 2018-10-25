@@ -1,0 +1,6 @@
+<div flex center column>
+  <div flex-one *ngIf="test">
+    <span>{{qrcode}}</span>
+  </div>
+  <button ion-button orange (click)="getQRCode()">Cattura immagine</button>
+</div>

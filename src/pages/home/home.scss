@@ -1,0 +1,94 @@
+@import '../../theme/variables.scss';
+
+page-home {
+  .inner-container {
+    align-content: stretch;
+    margin-bottom: 20px;
+    .history-link {
+      margin-top: 20px;
+    }
+  }
+
+    .accepted{
+        border-bottom:10px solid color($colors, lwf-lightest-blue);
+    }
+    .delivering{
+        border-bottom:10px solid color($colors, lwf-dark-orange);
+    }
+
+    .order-card {
+        margin-bottom:30px;
+        .order-card-header {
+            color: color($colors, lwf-dark-grey);
+            .order-card-id {
+                flex-basis:50%;
+                margin-right: 30px;
+                img {
+                    margin: 0 5px;
+                    width:40px;
+                }
+                .order-id {
+                    color: color($colors, lwf-light-blue);
+                    font-weight: 700;
+                }
+                .order-status-pending {
+                    color: color($colors, lwf-orange);
+                    font-size: 1.4rem
+                }
+                .order-status-delivering {
+                    color: color($colors, lwf-green);
+                    font-size: 1.4rem
+                }
+            }
+            .order-courier{
+                flex-basis:50%;
+            }
+        }
+        .order-price {
+            color: #fff;
+            background-color: color($colors, lwf-lightest-blue);
+            text-align: right;
+            padding: 5px;
+            .label {
+                margin: 0 3px 0 0;
+            }
+            &.item-block {
+                min-height: 0;
+            }
+        }
+        .order-addresses {
+            padding: 0 10px;
+            word-break: break-all;
+            color: color($colors, lwf-light-blue);
+            .item {
+                background-color: color($colors, lwf-lightest-grey);
+                .label {
+                    white-space: normal;
+                    word-break: break-word;
+                    color: color($colors, lwf-light-blue);
+                }
+                .order-date {
+                    color: color($colors, lwf-dark-grey);
+                }
+            }
+            .item:last-child {
+                border: 0;
+            }
+        }
+        .card-content {
+            padding: 0;
+            background-color: color($colors, lwf-lightest-grey);
+        }
+    }
+
+    .pick-up{
+        border-bottom: 15px solid color($colors, lwf-lightest-blue);
+    }
+    .delivering{
+        border-bottom: 15px solid color($colors, lwf-dark-orange);
+    }
+
+
+}
+
+

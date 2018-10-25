@@ -1,0 +1,105 @@
+<ion-content>
+    <div id="main-container" tall>
+        <div flex-wide class="logo">
+
+        </div>
+        <div class="call-to-action" flex flex-wrap justify-center>
+            <ion-icon class="button-back" name="arrow-round-back" (click)="gotoStart()"></ion-icon>
+            <span translate>form.registrationTitle</span>
+            <div flex-wide>
+                <hr class="bottom-hr-orange hr-small"/>
+            </div>
+        </div>
+        <div class="signup-form" flex flex-wrap>
+            <div id="form-container" flex flex-wide align-items-start justify-center="">
+                <form [formGroup]="signupForm" flex-wide
+                      (ngSubmit)="signup(signupForm)">
+                    <ion-label color="lwf-light-blue" stacked><span translate>form.firstName</span></ion-label>
+                    <div class="signup-input" flex flex-wide
+                         [class.invalid]="signupForm.controls['name'].hasError('required') &&
+                                            signupForm.controls['name'].touched">
+                        <input type="text" flex-wide
+                               [placeholder]="'form.firstName' | translate"
+                               [class.invalid]="signupForm.controls['name'].hasError('required') &&
+                                            signupForm.controls['name'].touched"
+                               formControlName="name"/>
+                    </div>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="signupForm.controls['name'].hasError('required') &&
+                                     signupForm.controls['name'].touched">
+                        *<span translate>form.firstNameError</span>
+                    </ion-item>
+
+                    <ion-label color="lwf-light-blue" stacked><span translate>form.lastName</span></ion-label>
+                    <div class="signup-input" flex flex-wide
+                         [class.invalid]="signupForm.controls['surname'].hasError('required') &&
+                                            signupForm.controls['surname'].touched">
+                        <input type="text" flex-wide
+                               [placeholder]="'form.lastName' | translate"
+                               [class.invalid]="signupForm.controls['surname'].hasError('required') &&
+                                            signupForm.controls['surname'].touched"
+                               formControlName="surname"/>
+                    </div>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="signupForm.controls['surname'].hasError('required') &&
+                                     signupForm.controls['surname'].touched">
+                        *<span translate>form.lastNameError</span>
+                    </ion-item>
+
+                    <ion-label color="lwf-light-blue" stacked><span translate>form.username</span></ion-label>
+                    <div class="signup-input" flex flex-wide
+                         [class.invalid]="signupForm.controls['username'].hasError('required') &&
+                                            signupForm.controls['username'].touched">
+                        <input type="text" flex-wide
+                               [placeholder]="'form.username' | translate"
+                               [class.invalid]="signupForm.controls['username'].hasError('required') &&
+                                            signupForm.controls['username'].touched"
+                               formControlName="username"/>
+                    </div>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="signupForm.controls['username'].hasError('required') &&
+                                     signupForm.controls['username'].touched">
+                        *<span translate>form.usernameError</span>
+                    </ion-item>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="signupForm.controls['username'].hasError('maxlength') &&
+                                     signupForm.controls['username'].touched">
+                        *<span translate>form.usernameError2</span>
+                    </ion-item>
+
+                    <ion-label color="lwf-light-blue" stacked><span translate>form.email</span></ion-label>
+                    <div class="signup-input" flex flex-wide
+                         [class.invalid]="(signupForm.controls['email'].hasError('required') ||
+                                           signupForm.controls['email'].invalid) &&
+                                           (signupForm.controls['email'].touched ||
+                                            signupForm.controls['email'].dirty)">
+                        <input type="email" flex-wide
+                               [placeholder]="'form.email' | translate"
+                               [class.invalid]="signupForm.controls['email'].hasError('required') &&
+                                            signupForm.controls['email'].touched"
+                               formControlName="email"/>
+                    </div>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="(signupForm.controls['email'].hasError('required') ||
+                                      signupForm.controls['email'].invalid) &&
+                                     (signupForm.controls['email'].touched ||
+                                      signupForm.controls['email'].dirty)">
+                        *<span translate>form.emailError</span>
+                    </ion-item>
+
+                    <div flex center class="button-separator">
+                        <button type="submit" bold ion-button color="lwf-orange" orange><span translate>buttons.signup</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="onboard" align-self-end text-center flex-wide>
+            <div class="onboard-title" translate>common.onBoardTitle</div>
+            <div class="onboard-message">
+                  <span translate>
+                    common.onBoard
+                  </span>
+            </div>
+        </div>
+    </div>
+</ion-content>

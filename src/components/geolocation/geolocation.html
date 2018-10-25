@@ -1,0 +1,5 @@
+<div #map *ngIf="test" id="map" class="map-container"></div>
+<div flex center>
+    <input hidden class="search-places" [(ngModel)]="inputPosition" type="text" title="position">
+    <button ion-button orange (click)="getPosition()">Get Position</button>
+</div>

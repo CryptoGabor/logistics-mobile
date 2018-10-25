@@ -1,0 +1,41 @@
+@import '../../theme/variables.scss';
+
+page-order-history{
+    .inner-container{
+        padding:30px 0;
+        font-size:1.7rem;
+        ion-grid{
+            padding:0;
+            border: 1px solid color($colors, lwf-light-grey);
+            .header-row{
+                color: color($colors, lwf-blue);
+                text-align:center;
+                font-weight: 600;
+                background-color:color($colors, lwf-lightest-grey);
+                font-size:1.5rem;
+            }
+            ion-row{
+                padding:5px;
+                border-bottom: 1px solid color($colors, lwf-light-grey);
+                ion-col{
+                    text-align:center;
+                }
+                .col-title{
+                    text-transform: uppercase;
+                }
+                .order-status-delivered{
+                    font-size:2rem;
+                    color: color($colors, lwf-green);
+                }
+                .order-status-not-delivered{
+                    font-size:2rem;
+                    color: color($colors, lwf-red);
+                }
+            }
+            ion-row:last-of-type{
+                border:0;
+            }
+
+        }
+    }
+}

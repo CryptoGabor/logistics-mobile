@@ -1,0 +1,48 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">Close</button>
+        </ion-buttons>
+        <ion-title> CONFIRM WITHDRAWAL</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content *ngIf="data">
+    <div class="call-to-action" flex-wide>
+        WITHDRAWAL
+        <hr class="bottom-hr-orange"/>
+    </div>
+
+    <section id="main-content" text-center>
+        <ion-item no-lines>
+            <div>
+                You've decided to make a withdrawal of:
+            </div>
+            <div highlight>{{data.currency.toUpperCase()}} {{data.amount}}</div>
+        </ion-item>
+        <ion-item no-lines>
+
+            <div>Withdrawal will be executed and sent to:</div>
+            <div highlight class="address"> {{data.address}}</div>
+        </ion-item>
+
+        <ion-item no-lines>
+            <div> Usually withdrawal will be executed in 1 hour!</div>
+        </ion-item>
+        <ion-item no-lines>
+            <div><strong>WARNING:</strong></div>
+            <div>
+                Use this address just once, if you send more than one time to this address,
+                your coin will be lost. For any problems contact us.
+            </div>
+        </ion-item>
+
+        <div flex center class="button-separator">
+            <!--<button (click)="submitWithdrawal()" bold ion-button orange>Next</button>-->
+            <button bold ion-button orange
+            (click)="submitWithdrawal()">Submit</button>
+        </div>
+    </section>
+</ion-content>

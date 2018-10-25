@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>COURIER SETTINGS</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <form *ngIf="settingsForm"
+          [formGroup]="settingsForm"
+          (ngSubmit)="createOrUpdateSettings(settingsForm)">
+
+        <section id="address">
+            <div class="call-to-action" flex-wide>
+                ADDRESS
+                <hr class="bottom-hr-orange"/>
+            </div>
+            <div flex flex-wrap>
+                <ion-label color="lwf-light-blue" stacked>From</ion-label>
+                <div class="settings-input" flex flex-wide
+                     [class.invalid]="settingsForm.controls['pickUpLocationAddress'].hasError('required') &&
+                                            settingsForm.controls['pickUpLocationAddress'].touched">
+                    <input type="text"
+                           placeholder="Enter an address"
+                           flex-one
+                           geocomplete
+                           [class.invalid]="settingsForm.controls['pickUpLocationAddress'].hasError('required') &&
+                                            settingsForm.controls['pickUpLocationAddress'].touched"
+                           formControlName="pickUpLocationAddress"
+                           (onPlaceSelected)="updateLocation($event)"/>
+                    <div align-self-center class="form-image">
+                        <ion-icon name="pin"
+                                  color="lwf-orange"
+                                  (click)="getCurrentAddress()"></ion-icon>
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="settingsForm.controls['pickUpLocationAddress'].hasError('required') &&
+                                 settingsForm.controls['pickUpLocationAddress'].touched">
+                    *Please insert an address
+                </ion-item>
+            </div>
+        </section>
+        <section id="price-per-km">
+
+            <div class="call-to-action" flex-wide>
+                Price Per Km Ranges
+                <hr class="bottom-hr-orange"/>
+            </div>
+
+            <div flex flex-wrap justify-between>
+                <div class="price-input" flex justify-between>
+                    <ion-label>10Km</ion-label>
+                    <ion-input type="number"
+                               placeholder="0"
+                               [class.invalid]="settingsForm.hasError('priceError') &&
+                                                settingsForm.controls['priceRange10Km'].touched"
+                               formControlName="priceRange10Km"></ion-input>
+                </div>
+                <div class="price-input" flex flex-wrap justify-between>
+                    <ion-label>20Km</ion-label>
+                    <ion-input type="number"
+                               placeholder="0"
+                               [class.invalid]="settingsForm.hasError('priceError') &&
+                                                settingsForm.controls['priceRange20Km'].touched"
+                               formControlName="priceRange20Km"></ion-input>
+                </div>
+                <div class="price-input" flex flex-wrap justify-between>
+                    <ion-label>50Km</ion-label>
+                    <ion-input type="number"
+                               placeholder="0"
+                               [class.invalid]="settingsForm.hasError('priceError') &&
+                                                settingsForm.controls['priceRange50Km'].touched"
+                               formControlName="priceRange50Km"></ion-input>
+                </div>
+                <div class="price-input" flex flex-wrap justify-between>
+                    <ion-label> >50Km</ion-label>
+                    <ion-input type="number"
+                               placeholder="0"
+                               [class.invalid]="settingsForm.hasError('priceError') &&
+                                                settingsForm.controls['priceRangeMore50Km'].touched"
+                               formControlName="priceRangeMore50Km"></ion-input>
+                </div>
+            </div>
+
+            <ion-item no-lines class="error-message"
+                      *ngIf="settingsForm.hasError('priceError') &&
+                      (settingsForm.controls['priceRange10Km'].touched ||
+                       settingsForm.controls['priceRange20Km'].touched ||
+                       settingsForm.controls['priceRange50Km'].touched ||
+                       settingsForm.controls['priceRangeMore50Km'].touched)">
+                *Set one or more price per Km
+            </ion-item>
+        </section>
+
+
+
+        <section id="submit">
+            <div class="update-settings">
+                <button ion-button color="lwf-light-blue"
+                        mode="ios"
+                        strong block
+                        type="submit">
+                    Save
+                </button>
+            </div>
+        </section>
+    </form>
+
+</ion-content>

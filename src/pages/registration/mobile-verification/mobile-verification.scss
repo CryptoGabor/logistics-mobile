@@ -1,0 +1,144 @@
+@import '../../../theme/variables.scss';
+
+page-mobile-verification {
+    .error-message {
+        align-items: flex-start;
+        padding: 0;
+        .label {
+            font-weight: 700;
+            margin: 0 0 0 0 !important;
+            flex-basis: 100%;
+        }
+        min-height: 15px;
+    }
+    #form-container {
+        padding: 0 30px;
+        .signup-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        input[type='text'],
+        input[type='email'],
+        input[type='password'],
+        input[type='number'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+        }
+
+        ion-datetime {
+            flex-basis: 100%;
+            position: relative;
+            margin-bottom: 10px;
+            button {
+                width: 100%;
+                border: 1px solid color($colors, lwf-light-grey);
+            }
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        .datetime {
+            padding: 3px 5px;
+        }
+        ion-select {
+            max-width: 100%;
+            position: relative;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+            align-items: center;
+            margin-bottom: 10px;
+            button {
+                width: 100%;
+                border: 1px solid color($colors, lwf-light-grey);
+                color: color($colors, lwf-dark-grey);
+            }
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        .text-input {
+            margin: 5px;
+        }
+        .label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            flex-basis: 100%;
+        }
+
+        .mobile {
+            .country-code {
+                width: 25%;
+                input {
+                    width: 100%
+                }
+            }
+            .mobile-number {
+                width: 65%;
+                input {
+                    width: 100%
+                }
+            }
+        }
+        .terms-agreement {
+            .label {
+                margin-top: 5px;
+                flex-basis: 80%;
+            }
+            ion-checkbox {
+                margin: auto 10px;
+                &.invalid {
+                    .checkbox-icon {
+                        border: 1px solid color($colors, lwf-red);
+                    }
+                }
+            }
+        }
+    }
+    .success-icon, .success-icon-check {
+        font-size: 6.5em;
+        color: color($colors, lwf-blue);
+    }
+
+    .success-title {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: color($colors, lwf-blue);
+        text-transform: uppercase;
+    }
+
+    .success-message {
+        font-size: 1.25em;
+        line-height: 1.9em;
+        font-weight: 100;
+        color: color($colors, lwf-black);
+        .signup-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        .button-separator {
+            flex-basis: 100%;
+        }
+        .error-message {
+            text-align: center;
+        }
+        input[type='number'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+        }
+
+    }
+
+    .terms-agreement {
+        .item-inner {
+            border-bottom: 0 !important;
+        }
+    }
+}

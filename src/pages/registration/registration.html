@@ -1,0 +1,290 @@
+<ion-content>
+    <div flex-wide class="logo">
+
+    </div>
+    <div flex>
+        <div class="call-to-action" flex flex-wrap justify-center align-items-start>
+            <ion-icon class="button-back" name="arrow-round-back" goback></ion-icon>
+            <span translate>form.registrationTitle</span>
+            <div flex-wide>
+                <hr class="bottom-hr-orange hr-small"/>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div flex-one padding id="form-container">
+            <form *ngIf="profile" [formGroup]="registrationForm"
+                  (ngSubmit)="signup(registrationForm)">
+                <ion-label color="lwf-light-blue" stacked><span translate>form.firstName</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['name'].hasError('required') &&
+                                            registrationForm.controls['name'].touched">
+                    <input type="text" flex-wide
+                           [placeholder]="'form.firstName' | translate"
+                           [class.invalid]="registrationForm.controls['name'].hasError('required') &&
+                                            registrationForm.controls['name'].touched"
+                           formControlName="name"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['name'].hasError('required') &&
+                                     registrationForm.controls['name'].touched">
+                    *<span translate>form.firstNameError</span>
+                </ion-item>
+                <ion-label color="lwf-light-blue" stacked><span translate>form.lastName</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['surname'].hasError('required') &&
+                                            registrationForm.controls['surname'].touched">
+                    <input type="text" flex-wide
+                           [placeholder]="'form.lastName' | translate"
+                           [class.invalid]="registrationForm.controls['surname'].hasError('required') &&
+                                            registrationForm.controls['surname'].touched"
+                           formControlName="surname"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['surname'].hasError('required') &&
+                                     registrationForm.controls['surname'].touched">
+                    *<span translate>form.lastNameError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.DoB</span></ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" flex-wide
+                              [placeholder]="'form.DoB' | translate"
+                              [class.invalid]="registrationForm.controls['dob'].hasError('required') &&
+                                                   registrationForm.controls['dob'].touched"
+                              formControlName="dob">
+                </ion-datetime>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['dob'].hasError('required') &&
+                                     registrationForm.controls['dob'].touched">
+                    *<span translate>form.DoBerror</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.country</span></ion-label>
+                <ion-select formControlName="country"
+                            interface="action-sheet"
+                            [placeholder]="'form.countrySelect' | translate"
+                            [selectOptions]="selectCountries"
+                            (ionChange)="setMobilePrefix($event)" flex-wide
+                            [class.invalid]="registrationForm.controls['country'].hasError('required') &&
+                                                 registrationForm.controls['country'].touched">
+                    <ion-option *ngFor="let c of countries" [value]="c.code">{{c.name}}</ion-option>
+                </ion-select>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['country'].hasError('required') &&
+                                 registrationForm.controls['country'].touched">
+                    *<span translate>form.countryError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.region</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['region'].hasError('required') &&
+                                      registrationForm.controls['region'].touched">
+                    <input type="text" flex-wide
+                           [placeholder]="'form.region' | translate"
+                           [class.invalid]="registrationForm.controls['region'].hasError('required') &&
+                                            registrationForm.controls['region'].touched"
+                           formControlName="region"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['region'].hasError('required') &&
+                                 registrationForm.controls['region'].touched">
+                    *<span translate>form.regionError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.city</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['city'].hasError('required') &&
+                                      registrationForm.controls['city'].touched">
+                    <input type="text" flex-wide
+                           [placeholder]="'form.city' | translate"
+                           [class.invalid]="registrationForm.controls['city'].hasError('required') &&
+                                            registrationForm.controls['city'].touched"
+                           formControlName="city"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['city'].hasError('required') &&
+                                 registrationForm.controls['city'].touched">
+                    *<span translate>form.cityError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.zipCode</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['zipcode'].hasError('required') &&
+                                      registrationForm.controls['zipcode'].touched">
+                    <input type="number" flex-wide
+                           [placeholder]="'form.zipCode' | translate"
+                           [class.invalid]="registrationForm.controls['zipcode'].hasError('required') &&
+                                            registrationForm.controls['zipcode'].touched"
+                           formControlName="zipcode"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['zipcode'].hasError('required') &&
+                                 registrationForm.controls['zipcode'].touched">
+                    *<span translate>form.zipCodeError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.address</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="registrationForm.controls['address'].hasError('required') &&
+                                      registrationForm.controls['address'].touched">
+                    <input type="text" flex-wide
+                           [placeholder]="'form.address' | translate"
+                           [class.invalid]="registrationForm.controls['address'].hasError('required') &&
+                                            registrationForm.controls['address'].touched"
+                           formControlName="address"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['address'].hasError('required') &&
+                                 registrationForm.controls['address'].touched">
+                    *<span translate>form.addressError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.ssn</span><span translate>form.optional</span></ion-label>
+                <div class="signup-input" flex flex-wide>
+                    <input type="text" [placeholder]="'form.ssn' | translate" formControlName="ssn" flex-wide/>
+                </div>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.mobile</span></ion-label>
+                <div class="mobile" flex flex-wide justify-between>
+                    <div class="signup-input country-code"
+                         [class.invalid]="(registrationForm.controls['mobile'].hasError('required') ||
+                                           registrationForm.controls['mobile'].hasError('min') ||
+                                           registrationForm.controls['mobile'].hasError('max')) &&
+                                           registrationForm.controls['mobile'].touched">
+                        <input type="text" [readonly]="true"
+                               [placeholder]="'form.mobilePrefix' | translate"
+                               formControlName="mobilePrefix"/>
+                    </div>
+                    <div class="signup-input mobile-number"
+                         [class.invalid]="(registrationForm.controls['mobile'].hasError('required') ||
+                                           registrationForm.controls['mobile'].hasError('min') ||
+                                           registrationForm.controls['mobile'].hasError('max')) &&
+                                           registrationForm.controls['mobile'].touched">
+                        <input type="number"
+                               [placeholder]="'form.mobilePlaceholder' | translate"
+                               [class.invalid]="(registrationForm.controls['mobile'].hasError('required') ||
+                                                 registrationForm.controls['mobile'].hasError('min') ||
+                                                 registrationForm.controls['mobile'].hasError('max')) &&
+                                                 registrationForm.controls['mobile'].touched"
+                               formControlName="mobile"/>
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['mobile'].hasError('required') &&
+                                 registrationForm.controls['mobile'].touched">
+                    *<span translate>form.mobileError1</span>
+                </ion-item>
+                <ion-item no-lines class="error-message"
+                          *ngIf="(registrationForm.controls['mobile'].hasError('min') ||
+                                  registrationForm.controls['mobile'].hasError('max')) &&
+                                  registrationForm.controls['mobile'].touched">
+                    *<span translate>form.mobileError2</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.email</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="(registrationForm.controls['email'].hasError('required') ||
+                                           registrationForm.controls['email'].invalid) &&
+                                           (registrationForm.controls['email'].touched ||
+                                            registrationForm.controls['email'].dirty)">
+                    <input type="email" flex-wide
+                           [placeholder]="'form.email' | translate"
+                           [class.invalid]="registrationForm.controls['email'].hasError('required') &&
+                                            registrationForm.controls['email'].touched"
+                           formControlName="email"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="(registrationForm.controls['email'].hasError('required') ||
+                                      registrationForm.controls['email'].invalid) &&
+                                     (registrationForm.controls['email'].touched ||
+                                      registrationForm.controls['email'].dirty)">
+                    *<span translate>form.emailError</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.password</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="(registrationForm.controls['password'].hasError('required') ||
+                                       registrationForm.controls['password'].hasError('minlength')) &&
+                                       registrationForm.controls['password'].touched ||
+                                      (registrationForm.controls['confirmPassword'].hasError('mismatch')  &&
+                                       registrationForm.controls['confirmPassword'].touched)">
+                    <input type="password" flex-wide
+                           [placeholder]="'form.password' | translate"
+                           [class.invalid]="(registrationForm.controls['password'].hasError('required') ||
+                                             registrationForm.controls['password'].hasError('minlength')) &&
+                                             registrationForm.controls['password'].touched ||
+                                            (registrationForm.controls['confirmPassword'].hasError('mismatch')  &&
+                                             registrationForm.controls['confirmPassword'].touched)"
+                           formControlName="password"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['password'].hasError('required') &&
+                                 registrationForm.controls['password'].touched">
+                    *<span translate>form.passwordError</span>
+                </ion-item>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['password'].hasError('minlength') &&
+                                 registrationForm.controls['password'].touched">
+                    *<span translate>form.passwordError2</span>
+                </ion-item>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['confirmPassword'].hasError('mismatch') &&
+                                 registrationForm.controls['confirmPassword'].touched &&
+                                 registrationForm.controls['password'].touched">
+                    *<span translate>form.passwordError3</span>
+                </ion-item>
+
+                <ion-label color="lwf-light-blue" stacked><span translate>form.confirmPass</span></ion-label>
+                <div class="signup-input" flex flex-wide
+                     [class.invalid]="(registrationForm.controls['confirmPassword'].hasError('required') ||
+                                       registrationForm.controls['confirmPassword'].hasError('minlength')) &&
+                                       registrationForm.controls['confirmPassword'].touched ||
+                                      (registrationForm.controls['confirmPassword'].hasError('mismatch')  &&
+                                       registrationForm.controls['confirmPassword'].touched)">
+                    <input type="password" flex-wide
+                           [placeholder]="'form.confirmPass' | translate"
+                           [class.invalid]="registrationForm.controls['confirmPassword'].hasError('required') &&
+                                            registrationForm.controls['confirmPassword'].touched"
+                           formControlName="confirmPassword"/>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['confirmPassword'].hasError('required') &&
+                                 registrationForm.controls['confirmPassword'].touched">
+                    *<span translate>form.confirmPassError</span>
+                </ion-item>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['confirmPassword'].hasError('minlength') &&
+                                 registrationForm.controls['confirmPassword'].touched">
+                    *<span translate>form.passwordError2</span>
+                </ion-item>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['confirmPassword'].hasError('mismatch') &&
+                                 registrationForm.controls['confirmPassword'].touched &&
+                                 registrationForm.controls['password'].touched">
+                    *<span translate>form.passwordError3</span>
+                </ion-item>
+
+                <div class="terms-agreement" flex flex-wrap align-items-center>
+                    <ion-checkbox color="lwf-light-blue"
+                                  [class.invalid]="registrationForm.controls['agreement'].hasError('required') &&
+                                         registrationForm.controls['agreement'].touched"
+                                  formControlName="agreement" checked="false"></ion-checkbox>
+                    <ion-label lwf-label-input>
+                        <span translate>form.termsMessage2</span>
+                        <a href="https://www.lwf.io/docs/terms.pdf" target="_blank">
+                            <span translate>form.termsLink</span>
+                        </a>
+                    </ion-label>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="registrationForm.controls['agreement'].hasError('required') &&
+                                 registrationForm.controls['agreement'].touched">
+                    *<span translate>form.termsError</span>
+                </ion-item>
+                <div flex center class="button-separator">
+                    <button bold ion-button orange type="submit"><span translate>buttons.signup</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ion-content>

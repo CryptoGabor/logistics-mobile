@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title ><span translate>accountVerification.title</span></ion-title>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-item *ngIf="profile">
+        <div class="verification-step" flex>
+            <div align-self-center class="verification-img">
+                <img src="assets/images/ID.svg"/>
+            </div>
+            <div flex flex-one column padding>
+                <div><span translate>accountVerification.step1.title</span></div>
+                <div *ngIf="submitStatus.docs && !profile.docVerified" translate>accountVerification.submitted</div>
+                <div *ngIf="!submitStatus.docs && !profile.docVerified" translate>accountVerification.notSubmitted</div>
+                <div *ngIf="profile.docVerified" translate>accountVerification.verified</div>
+            </div>
+            <ion-icon align-self-center end name="ios-arrow-forward" gotopage="account-verification-id"
+                      *ngIf="!profile.docVerified"></ion-icon>
+        </div>
+    </ion-item>
+    <ion-item *ngIf="profile">
+        <div class="verification-step" flex>
+            <div align-self-center class="verification-img">
+                <img src="assets/images/address.svg"/>
+            </div>
+            <div flex flex-one column padding>
+                <div><span translate>accountVerification.step2.title</span></div>
+                <div *ngIf="submitStatus.proofOfResidence && !profile.ProofOfresidenceVerified" translate>accountVerification.submitted</div>
+                <div *ngIf="!submitStatus.proofOfResidence && !profile.ProofOfresidenceVerified" translate>accountVerification.notSubmitted</div>
+                <div *ngIf="profile.ProofOfresidenceVerified" translate>accountVerification.verified</div>
+            </div>
+            <ion-icon align-self-center end name="ios-arrow-forward" gotopage="account-verification-address"
+                      *ngIf="!profile.ProofOfresidenceVerified"></ion-icon>
+        </div>
+    </ion-item>
+    <ion-item *ngIf="profile">
+        <div class="verification-step" flex>
+            <div align-self-center  class="verification-img">
+                <img src="assets/images/Selfie.svg"/>
+            </div>
+            <div flex flex-one column padding>
+                <div><span translate>accountVerification.step3.title</span></div>
+                <div *ngIf="submitStatus.selfidoc && !profile.SelfIDocVerified" translate>accountVerification.submitted</div>
+                <div *ngIf="!submitStatus.selfidoc && !profile.SelfIDocVerified" translate>accountVerification.notSubmitted</div>
+                <div *ngIf="profile.SelfIDocVerified" translate>accountVerification.verified</div>
+            </div>
+            <ion-icon align-self-center end name="ios-arrow-forward" gotopage="account-verification-selfie"
+                      *ngIf="!profile.SelfIDocVerified"></ion-icon>
+        </div>
+    </ion-item>
+    <div class="verification-info" text-center translate>
+        accountVerification.text
+    </div>
+</ion-content>
+
+

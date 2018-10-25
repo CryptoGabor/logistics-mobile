@@ -1,0 +1,307 @@
+{
+	"accountVerification": {
+		"notSubmitted": "Non Confermato",
+		"step1": {
+			"back": "Retro",
+			"driverLic": "Patente di guida",
+			"front": "Fronte",
+			"idCard": "Carta d'identità",
+			"info": "Clicca su fronte e retro per fare una foto del documento selezionato",
+			"passport": "Passaporto",
+			"select": "Seleziona il tipo di documento",
+			"title": "DOCUMENTO IDENTITA"
+		},
+		"step2": {
+			"bank": "Dichiarazione della banca",
+			"bill": "Bolletta",
+			"certificate": "Certificato di residenza",
+			"info": "Cliccare sul riquadro sopra per fare una foto della prova di residenza selezionata",
+			"select": "Seleziona prova di residenza",
+			"title": "INDIRIZZO"
+		},
+		"step3": {
+			"info": "E' necessario effettuare una foto col documento selezionato in precedenza e un foglio con scritto il seguente testo:",
+			"title": "SELFIE"
+		},
+		"submitted": "Confermato",
+		"text": "Si prega di fare una foto dei documenti richiesti.\nDevono essere foto ad alta qualità, i documenti devono essere chiari e leggibili.\nSi prega di non caricare foto sfocate.",
+		"title": "VERIFICA ACCOUNT",
+		"verified": "Verificato"
+	},
+	"buttons": {
+		"becomeCourier": "Diventa un Corriere",
+		"gotoHome": "Vai alla Homepage",
+		"login": "Accedi",
+		"next": "Avanti",
+		"signup": "Registrati",
+		"submit": "Invia",
+		"vote": "Vota",
+        "goToLogin": "Vai al Login",
+        "mailReceived":"Ho ricevuto la mail!",
+        "send":"Invia",
+        "refresh": "Aggiorna"
+
+    },
+	"common": {
+		"address": "Indirizzo",
+		"cancel": "Annulla",
+		"close": "chiudi",
+		"courier": "Corriere",
+		"customer": "Cliente",
+		"delivery": "Consegna",
+		"deposit": "Deposita",
+		"from": "Da",
+		"historyLink": "Vai allo storico degli ordini",
+		"notes": "Note",
+		"onBoard": "Spedisci rapidamente un pacco con uno\ndei corrieri della rete LWF o diventa \nanche tu un corriere e guadagna subito\ncon le consegne.",
+		"onBoardTitle": "LWF INSTANT DELIVERY",
+		"package": "Pacchi",
+		"paynow": "Paga Ora",
+		"pickup": "Ritiro",
+		"price": "Prezzo",
+		"pullingText": "Scorri giù per ricaricare",
+		"refreshingText": "Caricamento...",
+		"route": "Percorso",
+		"sizeLarge": "Grande",
+		"sizeMedium": "Medio",
+		"sizeSmall": "Piccolo",
+		"to": "A",
+		"withdrawal": "Preleva",
+        "confirmEmail": "Conferma Email",
+        "signupMessage": "Abbiamo inviato una email di conferma all’indirizzo fornito.\nPer proseguire la registrazione, controlla la tua email e clicca sul link di conferma.",
+        "recoveryPswMessage":"Abbiamo inviato una email di recupero password all’indirizzo fornito.\nPer proseguire controlla la tua email e clicca sul link di conferma."
+    },
+	"creditsbar": {
+		"title": "I tuoi Bundle Credits"
+	},
+	"errors": {
+		"linkExpiredMessage": "Ci scusiamo ma il tuo link di attivazione è scaduto.\nClicca sul pulsante per procedere nuovamente alla registrazione. ",
+		"linkExpiredTitle": "Link Scaduto",
+        "noConnectionTitle": "Nessuna connessione al server",
+        "noConnectionMessage": "Ci scusiamo ma non è stata rilevata nessuna connessione al server.\nClicca sul pulsante per riprovare."
+	},
+	"feedback": {
+		"placeholder": "Scrivi una recensione",
+		"review": "Lascia un feedback",
+		"title": "FEEDBACK"
+	},
+	"form": {
+		"DoB": "Data di nascita",
+		"DoBerror": "Inserire Data di nascita",
+		"address": "Indirizzo",
+		"addressError": "Inserire Indirizzo",
+		"city": "Città",
+		"cityError": "Inserire la Città",
+		"confirmMobileError": "Codice incorretto",
+		"confirmMobileMessage": "Abbiamo inviato un SMS con un codice di\nconferma al numero di telefono fornito.\nInserisci il codice nel campo di verifica.",
+		"confirmMobileTitle": "Conferma Telefono",
+		"confirmPass": "Conferma Password",
+		"confirmPassError": "Inserire nuovamente la password",
+		"country": "Nazione",
+		"countryError": "Inserire la Nazione",
+		"countrySelect": "Seleziona la tua Nazione",
+		"email": "E-mail",
+		"emailError": "Inserire un indirizzo e-mail valido",
+		"firstName": "Nome",
+		"firstNameError": "Inserire Nome",
+		"forgottenPassword": "Password dimenticata?",
+		"lastName": "Cognome",
+		"lastNameError": "Inserire Cognome",
+		"loginTitle": "Login",
+		"mobile": "Cellulare",
+		"mobileError1": "Inserire numero Cellulare",
+		"mobileError2": "Il numero di cellulare deve avere dalle 10 alle 13 cifre",
+		"mobilePlaceholder": "",
+		"mobilePrefix": "Prefisso",
+		"optional": "(Facoltativo)",
+		"password": "Password",
+		"passwordError": "Inserire la password",
+		"passwordError2": "La password deve avere almeno 8 caratteri",
+		"passwordError3": "Le password non corrispondono",
+		"region": "Regione",
+		"regionError": "Inserire la Regione",
+		"registrationTitle": "Registrazione",
+		"ssn": "Codice Fiscale",
+		"termsError": "Clicca sulla casella per accettare i nostri Termini di utilizzo",
+		"termsLink": "Termini di utilizzo",
+		"termsMessage": "Effettuando l'accesso dichiari di accettare i nostri",
+		"termsMessage2": "Clicca sulla casella per accettare i nostri ",
+		"uNamePassError": "Nome Utente o password non sono corretti",
+		"username": "Nome Utente",
+		"usernameError": "Inserire Nome Utente",
+		"usernameError2": "Il nome utente deve avere massimo 16 caratteri",
+		"zipCode": "C.A.P.",
+		"zipCodeError": "Inserire C.A.P.",
+        "passwordRecoveryTitle": "Recupero Password",
+        "passwordResetTitle": "Reimposta Password"
+    },
+	"home": {
+		"orderCard": {
+			"ACCEPTED": "ACCETTATO",
+			"DELIVERED": "CONSEGNATO"
+		},
+		"title": "HOME"
+	},
+	"homeCourier": {
+		"distance": "Distanza",
+		"filterBy": "Ordina per",
+		"orderCard": {
+			"ACCEPTED": "ACCETTATO",
+			"DELIVERED": "CONSEGNATO"
+		},
+		"time": "Tempo",
+		"title": "GESTISCI ORDINI"
+	},
+    "menu":{
+        "account": "PROFILO",
+        "home": "HOME",
+        "logout": "LOGOUT",
+        "settings": "IMPOSTAZIONI",
+        "switchCourier": "SEZIONE CORRIERE ",
+        "switchCustomer": "SEZIONE CLIENTE",
+        "wallet": "WALLET"
+    },
+	"newOrder": {
+		"addPackTitle": "Aggiungi Pacchi",
+		"courierFound": "Corrieri a meno di",
+		"courierSearch": "Richiedi un corriere",
+		"form": {
+			"address": "Inserisci indirizzo",
+			"addressError": "Inserisci un indirizzo valido",
+			"packageDeclaration": "Dichiaro che i pacchi rispettano i termini delle politiche LWF",
+			"packageError1": "Completare almeno uno dei campi",
+			"packageError2": "Si chiede di accettare il regolamento relativo ai pacchi",
+			"priceRangeError": "",
+			"receiver": "Destinatario",
+			"receiverError": "Inserire nome del destinatario",
+			"sender": "Mittente",
+			"senderError": "Inserire nome del mittente",
+			"timeDelivery": "Orario consegna",
+			"timePickUp": "Orario ritiro",
+			"timeSlotsError": "Inserire le fasce orario che preferisci per il ritiro e la consegna",
+			"urgent": "Urgente"
+		},
+		"payment": {
+			"instructions": "La tua richiesta verrà inviata a tutti i corrieri trovati.\nLa richiesta verrà gestita dal primo corriere disponibile e pagherai il prezzo stabilito.",
+			"li1": "Stai per inviare la richiesta a tutti i corrieri",
+			"li2": "LWF selezionerà il primo corriere disponibile",
+			"li3": "Il credito corrispondente compreso tra {{minPrice}} Bc e {{maxPrice}} Bc verrà scalato",
+			"noteTitle": "Aggiungi dettagli riguardanti la spedizione",
+			"termsLink": "Termini di Utilizzo",
+			"termsMessage": "Cliccando su Paga Ora dichiari di accettare i nostri",
+			"title": "PAGAMENTO ORDINE"
+		},
+		"priceRangeTitle": "Intervallo Prezzi",
+		"timeSlotsTitle": "Fasce Orarie",
+		"title": "NUOVO ORDINE"
+	},
+	"orderHistory": {
+		"courier": "CORRIERE",
+		"customer": "CLIENTE",
+		"price": "PREZZO",
+		"status": "STATO",
+		"title": "STORICO ORDINI"
+	},
+	"orderStatus": {
+		"ACCEPTED": "ACCETTATO",
+		"DELIVERED": "CONSEGNATO",
+		"NOT-DELIVERED": "NON CONSEGNATO",
+		"TRANSIT": "IN TRANSITO",
+		"TRANSIT-2": "2° TENTATIVO",
+		"attemptDelivery": "2° tentativo di consegna",
+		"collectID": "ID Ritiro",
+		"collectIdTooltip": "Fornisci questo ID al corriere in caso di avvenuto ritiro",
+		"collectTooltip": "Inserisci l'ID fornito all'indirizzo di Ritiro",
+		"copiedTo": "copiato sulla clipboard",
+		"copy": "Copia",
+		"courierID": "ID Corriere",
+		"courierTooltip": "Verifica che il tuo ID corrisponda a quello che è stato fornito al cliente",
+		"customerTooltip": "Verifica che questo ID corrisponda con quello del Corriere",
+		"deliveryConfirm": "Conferma Consegna",
+		"deliveryIdTooltip": "Fornisci questo ID al corriere in caso di avvenuta consegna",
+		"deliveryTooltip": "Inserisci l'ID fornito all'indirizzo di Consegna",
+		"insertPin": "inserisci pin",
+		"leaveFeedback": "Lascia Feedback",
+		"messageText": "Il tuo {{pinName}}:{{pin}} per l'ordine #{{orderId}}",
+		"notDelivered": "Non Consegnato",
+		"orderN": "Ordine N. {{orderId}}",
+		"pinArea": "Area Pin",
+		"sendEmail": "Invia E-mail",
+		"sendPin": "Invia Pin",
+		"sendSMS": "Invia SMS",
+		"title": "DETTAGLIO ORDINE"
+	},
+	"requestDetail": {
+		"acceptButton": "ACCETTA",
+		"refuseButton": "Rifiuta",
+		"timerError": "Timer impostato non correttamente",
+		"title": "ACCETTA ORDINE"
+	},
+	"requests": {
+		"info": "Attiva per mostrare le richieste disponibili nella tua zona e visualizzare i dettagli per accettare gli ordini",
+		"requestCard": {
+			"customer": "Cliente",
+			"delivery": "Consegna",
+			"pickup": "Ritiro",
+			"price": "Prezzo",
+			"route": "Percorso"
+		},
+		"settingsButton": "Impostazioni",
+		"show": "MOSTRA RICHIESTE",
+		"tabTitle": "RICHIESTE",
+		"title": "NUOVE RICHIESTE"
+	},
+    "resetPsw":{
+        "title": "Password reimpostata",
+        "message": "La tua password è stata cambiata con successo"
+    },
+	"settings": {
+		"addressPlaceholder": "Inserisci un indirizzo",
+		"grid": {
+			"averagePrice": "Media (Bc)",
+			"enableRange": "Attiva",
+			"rangeKm": "Raggio (Km)",
+			"rangePrice": "Prezzo per Km (Bc)"
+		},
+		"priceError": "Inserisci uno o più prezzi per Km",
+		"priceInfo": "Seleziona l'area e imposta il prezzo",
+		"priceKm": "Prezzo per Km",
+		"saveButton": "Salva",
+		"title": "IMPOSTAZIONI CORRIERE"
+	},
+	"wallet": {
+		"address": "Inserisci indirizzo",
+		"addressError": "Inserisci un indirizzo",
+		"amountError": "Inserisci un importo valido",
+		"cryptoModal": {
+			"copyAddress": "Copia Indirizzo",
+			"info": "Hai deciso di depositare {{currency}} sul tuo conto.\nDovrai inviare l'importo a:",
+			"info2": "I crediti saranno disponibili dopo 3 conferme di rete",
+			"title": "DEPOSITA {{currency}}",
+			"warningMessage": "Utilizza questo indirizzo solo una volta. Se dovessi inviare più di una volta a questo indirizzo, i tuoi crediti verranno persi. In caso di problemi non esitare a contattarci.",
+			"warningTitle": "ATTENZIONE:"
+		},
+		"cryptoCurrency": "Criptovaluta",
+		"cryptoCurrencyMessage": "Premi sull'icona di una valuta per mostrare l'indirizzo",
+		"currencyError": "Selezionare una valuta",
+		"feeWarning": "(Potrebbe essere applicata una commissione)",
+		"feeWarning2": "Il 3% di commissione verrà automaticamente applicato alla transazione",
+		"insertAmount": "Inserire importo",
+		"paypal-card": "Paypal, Carta di Credito o Debito",
+		"selectCurrency": "Seleziona valuta",
+		"withdrawInfo": "Fai attenzione inserendo l'indirizzo della criptovaluta.\nNon possiamo essere ritenuti responsabili in caso di errore nell'inserimento dell'indirizzo.",
+		"withdrawalModal": {
+			"text1": "Hai deciso di effetture un prelievo di:",
+			"text2": "Il prelievo verrà eseguito e inviato a:",
+			"text3": "Di norma il prelievo viene eseguito entro 1 ora!",
+			"title": "CONFERMA PRELIEVO"
+		}
+	},
+	"welcomePage": {
+		"link": "Consulta la guida",
+		"message1": "Ora puoi richiedere un corriere espresso dalla rete LWF per inviare o ricevere un pacco",
+		"message2": "Diventa un corriere LWF per iniziare a guadagnare con le consegne.\nClicca sul pulsante in basso per procedere alla verifica, richiederà solo qualche minuto.",
+		"termsMessage": "Cliccando sul pulsante dichiari di accettare i nostri",
+		"title": "Benvenuto"
+	}
+}

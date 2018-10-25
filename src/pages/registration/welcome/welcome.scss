@@ -1,0 +1,43 @@
+@import '../../../theme/variables.scss';
+
+page-welcome{
+    #welcome {
+        font-size: 2rem;
+        background-color: color($colors, lwf-light-blue);
+        #welcome-msg {
+            background-color: #fff;
+            padding: 10px 30px 30px;
+            margin-bottom:30px;
+            .call-to-action{
+                font-size:2rem;
+            }
+            .welcome-text {
+                margin-bottom:10px;
+            }
+            button{
+                font-size:1.7rem;
+                margin-bottom:10px;
+            }
+        }
+        #become-courier{
+            padding:10px;
+            color: #fff;
+            img{
+                margin-bottom:15px;
+            }
+            button{
+                font-size:1.7rem;
+                margin:10px 0;
+                color: color($colors, lwf-light-blue)
+            }
+            .terms-agreement{
+                font-size: 1.2rem;
+                a{
+                    color:#fff;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+

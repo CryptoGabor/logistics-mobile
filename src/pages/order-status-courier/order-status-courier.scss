@@ -1,0 +1,246 @@
+@import '../../theme/variables.scss';
+
+page-order-status-courier {
+    #order-info {
+        padding: 0;
+        margin: 20px 0;
+        min-height: 0;
+        .order-id {
+            background-color: color($colors, lwf-lightest-grey);
+            color: color($colors, lwf-blue);
+            flex-basis: 60%;
+            padding: 10px 20px;
+            font-weight: 700;
+        }
+        .order-status {
+            flex-basis: 40%;
+            background-color: color($colors, lwf-green);
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            font-weight: 700;
+        }
+
+    }
+    .inner-container {
+        align-content: stretch;
+        margin-bottom: 20px;
+        #leave-feedback-section{
+            padding:0 30px;
+            margin-bottom:10px;
+            font-weight:700;
+        }
+        #pin-area {
+            .pin-area-content {
+                background-color: color($colors, lwf-lightest-grey);
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .pin-area-title {
+                text-align: center;
+                color: color($colors, lwf-blue);
+                font-weight: 700;
+                font-size: 2rem;
+                padding-left: 25px;
+                text-transform: uppercase;
+            }
+            ion-icon {
+                font-size: 3rem;
+                color: color($colors, lwf-grey);
+            }
+            .pin-numbers {
+                text-align: center;
+                padding: 20px 0;
+                ion-input {
+                    border: 1px solid color($colors, lwf-light-grey);
+                    text-align:center;
+                    background-color: #fff;
+                    color: color($colors, lwf-dark-grey);
+                    font-size:2rem;
+                    padding:3px 0;
+                    width:180px;
+                    input{
+                        text-align: center;
+                        color: color($colors, lwf-dark-grey);
+                        font-weight: 700;
+                    }
+                }
+                .text-input {
+                    margin: 5px;
+                }
+                .label {
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                    flex-basis: 100%;
+                    text-align: center;
+                }
+                .courier-id {
+                    flex-basis: 50%;
+                }
+                .collect-id {
+                    flex-basis: 50%;
+                }
+                .pin-title {
+                    color: color($colors, lwf-dark-grey);
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                }
+                .pin {
+                    color: color($colors, lwf-dark-grey);
+                    font-size: 3rem;
+                    font-weight: 700;
+                }
+                .send-pin {
+                    margin-top: 10px;
+                    a {
+                        color: color($colors, lwf-light-blue);
+                        font-size: 1.7rem;
+                        text-transform: uppercase;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        #order-summary {
+            .title-bar {
+                background-color: color($colors, lwf-light-blue);
+                padding: 10px;
+                text-align: center;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size:1.7rem;
+            }
+
+            .order-id {
+                background-color: color($colors, lwf-alternate-grey);
+                color: color($colors, lwf-light-blue);
+                padding: 10px 20px 10px 20px;
+            }
+            .additional-info {
+                background-color: color($colors, lwf-light-blue);
+                padding: 10px 20px 10px 20px;
+                text-align: right;
+                font-size: 1.5rem;
+                color: #fff;
+                span {
+                    color: #fff;
+                }
+            }
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 15px;
+            }
+            #pickup {
+                color: color($colors, lwf-dark-grey);
+                padding: 10px 20px;
+                border-bottom: 3px solid color($colors, lwf-light-grey);
+                .title {
+                    color: color($colors, lwf-lightest-blue);
+                }
+            }
+            #delivery {
+                color: color($colors, lwf-dark-grey);
+                padding: 10px 20px;
+                border-bottom: 3px solid color($colors, lwf-light-grey);
+                .title {
+                    color: color($colors, lwf-dark-orange);
+                }
+            }
+            #package {
+                color: color($colors, lwf-dark-grey);
+                padding: 10px 20px;
+                border-bottom: 3px solid color($colors, lwf-light-grey);
+                .title {
+                    color: color($colors, lwf-orange);
+                }
+            }
+            #customer-info {
+                color: color($colors, lwf-dark-grey);
+                margin-top:10px;
+                background-color: color($colors, lwf-lightest-grey);
+                padding: 10px 20px;
+                border-bottom: 3px solid color($colors, lwf-light-grey);
+                .title {
+                    color: color($colors, lwf-light-blue);
+                }
+                .customer-image{
+                    width:40px;
+                    height:40px;
+                }
+                .chat-btn{
+                    color: color($colors, lwf-light-blue);
+                    font-style: italic;
+                    text-transform: capitalize;
+                    font-size:1.7rem;
+                    height:20px;
+                    .button-inner{
+                        align-items:flex-start;
+                    }
+                    ion-icon{
+                        margin-left:10px;
+
+                    }
+                }
+            }
+            .date {
+                font-weight: 700;
+                line-height: 1.5;
+                font-size: 1.7rem
+            }
+            .title {
+                margin-top: 0;
+                font-weight: 700;
+                line-height: 2;
+            }
+            .info {
+                padding: 0 0 0 45px;
+                font-size: 1.7rem
+            }
+            .address{
+                color: color($colors, lwf-light-blue);
+                padding: 0 0 0 45px;
+                font-size: 1.7rem
+            }
+            .name{
+                color: color($colors, lwf-grey);
+                padding: 0 0 0 45px;
+                font-size: 1.7rem
+            }
+            .feedback{
+                padding: 0 0 0 55px;
+                font-size: 1.7rem
+            }
+        }
+    }
+}
+.tooltip {
+    .toast-wrapper {
+        background-color: color($colors, lwf-dark-grey);
+    }
+    .toast-message {
+        color: #fff;
+    }
+    .toast-button {
+        color: #fff;
+    }
+}
+
+.delivery-actions {
+    font-weight:700;
+    .second-attempt {
+        color: color($colors, lwf-orange) !important;
+        font-weight:700;
+    }
+    .not-delivered {
+        color: color($colors, lwf-red) !important;
+        font-weight:700;
+    }
+    .action-sheet-cancel{
+        color: color($colors, lwf-blue) !important;
+        font-weight:700;
+    }
+}

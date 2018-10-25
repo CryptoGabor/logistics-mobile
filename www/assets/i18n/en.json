@@ -1,0 +1,306 @@
+{
+	"accountVerification": {
+		"notSubmitted": "Not Submitted",
+		"step1": {
+			"back": "Back",
+			"driverLic": "Driver License",
+			"front": "Front",
+			"idCard": "National ID Card",
+			"info": "Please click on front and back to take a picture of your selected ID\n",
+			"passport": "Passport",
+			"select": "Select your ID Document type",
+			"title": "ID CARD"
+		},
+		"step2": {
+			"bank": "Bank account statement",
+			"bill": "Utility Bill",
+			"certificate": "Proof of residence certification",
+			"info": "Please click on the box above to take a picture of your selected Proof of Residence\n",
+			"select": "Select your Proof of Residence Type",
+			"title": "ADDRESS"
+		},
+		"step3": {
+			"info": "You must take a picture of yourself with your ID and a paper with written the following text:\n",
+			"title": "SELFIE"
+		},
+		"submitted": "Submitted",
+		"text": "Please take a picture of the required documents.\nThey must be high quality pictures, the documents must be clear and readable.\nPlease don't upload blurry pictures.",
+		"title": "ACCOUNT VERIFICATION",
+		"verified": "Verified"
+	},
+	"buttons": {
+		"becomeCourier": "Become a Courier",
+		"gotoHome": "Go To Homepage",
+		"login": "Login",
+		"next": "Next",
+		"signup": "Sign Up",
+		"submit": "Submit",
+		"vote": "Vote",
+        "goToLogin": "Go To Login",
+        "mailReceived":"I received the e-mail!",
+        "send":"Send",
+        "refresh":"Refresh"
+    },
+	"common": {
+		"address": "Address",
+		"cancel": "Cancel",
+		"close": "close",
+		"courier": "Courier",
+		"customer": "Customer",
+		"delivery": "Delivery",
+		"deposit": "Deposit",
+		"from": "From",
+		"historyLink": "Go To Order History",
+		"notes": "Notes",
+		"onBoard": "Send a parcel quickly with \na courier of LWF Network or \nbecome a courier and immediatly \nmake money with deliveries",
+		"onBoardTitle": "LWF INSTANT DELIVERY",
+		"package": "Package",
+		"paynow": "Pay Now",
+		"pickup": "Pick up",
+		"price": "Price",
+		"pullingText": "Pull to refresh",
+		"refreshingText": "Refreshing...",
+		"route": "Route",
+		"sizeLarge": "Large",
+		"sizeMedium": "Medium",
+		"sizeSmall": "Small",
+		"to": "To",
+		"withdrawal": "Withdrawal",
+        "confirmEmail": "Email Confirmation",
+        "signupMessage": "A confirmation e-mail has been sent at your address.\nTo proceed with the registration check your e-mail inbox and click on the confirmation link.",
+        "recoveryPswMessage":"A confirmation e-mail has been sent at your address.\nTo proceed check your e-mail inbox and click on the confirmation link."
+    },
+	"creditsbar": {
+		"title": "Your Bundle Credits"
+	},
+	"errors": {
+		"linkExpiredMessage": "We are sorry but your activation link is expired.\nPlease click the button to try again to signup.",
+		"linkExpiredTitle": "Link Expired",
+        "noConnectionTitle": "No connection to remote server",
+        "noConnectionMessage": "We are sorry but there's no connection to remote server.\nPlease click the button to try again."
+	},
+	"feedback": {
+		"placeholder": "Write a review",
+		"review": "Leave a feedback",
+		"title": "FEEDBACK"
+	},
+	"form": {
+		"DoB": "Date of Birth",
+		"DoBerror": "Date of Birth is required",
+		"address": "Address",
+		"addressError": "Address is required",
+		"city": "City",
+		"cityError": "City is required",
+		"confirmMobileError": "Code required or mismatch",
+		"confirmMobileMessage": "We sent an SMS with a confirmation code\nto the provided mobile number.\nEnter the code in the verification field.",
+		"confirmMobileTitle": "Confirm Mobile",
+		"confirmPass": "Confirm Password",
+		"confirmPassError": "Confirm password is required",
+		"country": "Country",
+		"countryError": "Country is required",
+		"countrySelect": "Select Your Country",
+		"email": "E-mail",
+		"emailError": "A valid e-mail address is required",
+		"firstName": "First Name",
+		"firstNameError": "First Name is required",
+		"forgottenPassword": "Forgotten Password?",
+		"lastName": "Last Name",
+		"lastNameError": "Last Name is required",
+		"loginTitle": "Login",
+		"mobile": "Mobile",
+		"mobileError1": "Mobile number is required",
+		"mobileError2": "Mobile number must be between 10 and 13 digits",
+		"mobilePlaceholder": "",
+		"mobilePrefix": "Code",
+		"optional": "(Optional)",
+		"password": "Password",
+		"passwordError": "Password is required",
+		"passwordError2": "Password must be at least 8 characters long",
+		"passwordError3": "Passwords do not match",
+		"region": "Region",
+		"regionError": "Region is required",
+		"registrationTitle": "Registration",
+		"ssn": "SSN",
+		"termsError": "Please click on the checkbox to agree with our terms",
+		"termsLink": "Terms of use",
+		"termsMessage": "Clicking Login you agree with our",
+		"termsMessage2": "Click on the checkbox to agree with our",
+		"uNamePassError": "Username or Password are incorrect",
+		"username": "Username",
+		"usernameError": "Username is required",
+		"usernameError2": "Username must be maximum 16 characters",
+		"zipCode": "Zip Code",
+		"zipCodeError": "Zip Code is required",
+        "passwordRecoveryTitle": "Password Recovery",
+        "passwordResetTitle": "Password Reset"
+    },
+	"home": {
+		"orderCard": {
+			"ACCEPTED": "ACCEPTED",
+			"DELIVERED": "DELIVERED"
+		},
+		"title": "HOME"
+	},
+	"homeCourier": {
+		"distance": "Distance",
+		"filterBy": "Order by",
+		"orderCard": {
+			"ACCEPTED": "ACCEPTED",
+			"DELIVERED": "DELIVERED"
+		},
+		"time": "Time",
+		"title": "MANAGE ORDERS"
+	},
+    "menu":{
+        "account": "ACCOUNT",
+        "home": "HOME",
+        "logout": "LOGOUT",
+        "settings": "SETTINGS",
+        "switchCourier": "SWITCH TO COURIER",
+        "switchCustomer": "SWITCH TO CUSTOMER",
+        "wallet": "WALLET"
+    },
+	"newOrder": {
+		"addPackTitle": "Add packages",
+		"courierFound": "Couriers for less than",
+		"courierSearch": "Request a Courier",
+		"form": {
+			"address": "Enter address",
+			"addressError": "Please enter a valid address",
+			"packageDeclaration": "I declare that the parcel respect the terms of LWF policy",
+			"packageError1": "Please fill at least one of the field",
+			"packageError2": "Please accept the parcel agreement",
+			"priceRangeError": "",
+			"receiver": "Receiver",
+			"receiverError": "Please enter the receiver name",
+			"sender": "Sender",
+			"senderError": "Please enter sender's name\n",
+			"timeDelivery": "Time to delivery",
+			"timePickUp": "Time to pick up",
+			"timeSlotsError": "Please enter the time slots your prefer for pick up and delivering",
+			"urgent": "Urgent"
+		},
+		"payment": {
+			"instructions": "Your request will be sent to all the couriers found.\nThe request will be handled by the first available courier and you will pay the agreed price",
+			"li1": "You are about to send the request to all couriers",
+			"li2": "LWF select the first courier available",
+			"li3": "The corresponding credit between {{minPrice}} Bc and {{maxPrice}} Bc will be deducted",
+			"noteTitle": "Add details about delivery",
+			"termsLink": "Terms of Use",
+			"termsMessage": "Clicking on Pay Now you agree with our",
+			"title": "ORDER PAYMENT"
+		},
+		"priceRangeTitle": "Price Range",
+		"timeSlotsTitle": "Time Slots",
+		"title": "NEW ORDER"
+	},
+	"orderHistory": {
+		"courier": "COURIER",
+		"customer": "CUSTOMER",
+		"price": "PRICE",
+		"status": "STATUS",
+		"title": "ORDER HISTORY"
+	},
+	"orderStatus": {
+		"ACCEPTED": "ACCEPTED",
+		"DELIVERED": "DELIVERED",
+		"NOT-DELIVERED": "NOT DELIVERED",
+		"TRANSIT": "TRANSIT",
+		"TRANSIT-2": "2nd TRANSIT",
+		"attemptDelivery": "Attempt 2nd delivery",
+		"collectID": "Collect ID",
+		"collectIdTooltip": "Provide this ID to the courier in case of successful collection",
+		"collectTooltip": "You must enter the Collect ID provided at the collection site",
+		"copiedTo": "copied to clipboard",
+		"copy": "Copy",
+		"courierID": "Courier ID",
+		"courierTooltip": "You need to check if your ID match with the one that has been provided to the customer'",
+		"customerTooltip": "You need to check if this  ID match with the one of the Courier",
+		"deliveryConfirm": "Delivery Confirmation",
+		"deliveryIdTooltip": "Provide this ID to the courier in case of successful delivery",
+		"deliveryTooltip": "You must enter the Delivery ID provided at the delivery site",
+		"insertPin": "insert pin",
+		"leaveFeedback": "Leave Feedback",
+		"messageText": "Your {{pinName}}:{{pin}} for Order #{{orderId}}",
+		"notDelivered": "Not Delivered",
+		"orderN": "Order N. {{orderId}}",
+		"pinArea": "Pin Area",
+		"sendEmail": "Send E-mail",
+		"sendPin": "Send Pin",
+		"sendSMS": "send SMS",
+		"title": "ORDER DETAILS"
+	},
+	"requestDetail": {
+		"acceptButton": "ACCEPT",
+		"refuseButton": "Refuse",
+		"timerError": "Timer set up incorrectly",
+		"title": "ACCEPT ORDER"
+	},
+	"requests": {
+		"info": "Enable to show available requests in your area and view details to accept orders.\n",
+		"requestCard": {
+			"customer": "Customer",
+			"delivery": "Delivery",
+			"pickup": "Pick-Up",
+			"price": "Price",
+			"route": "Route"
+		},
+		"settingsButton": "Settings",
+		"show": "SHOW REQUESTS",
+		"tabTitle": "REQUESTS",
+		"title": "NEW REQUESTS"
+	},
+    "resetPsw":{
+        "title": "Password reset successful",
+        "message": "Your password has been changed successfully"
+    },
+	"settings": {
+		"addressPlaceholder": "Enter an address",
+		"grid": {
+			"averagePrice": "Average (Bc)",
+			"enableRange": "Enable",
+			"rangeKm": "Range (Km)",
+			"rangePrice": "Price per Km (Bc)"
+		},
+		"priceError": "Set one or more price per Km",
+		"priceInfo": "Select the range and set your price\n",
+		"priceKm": "Price Per Km Ranges\n",
+		"saveButton": "Save",
+		"title": "COURIER SETTINGS"
+	},
+	"wallet": {
+		"address": "Enter Address",
+		"addressError": "Please enter an address",
+		"amountError": "Insert a valid amount",
+		"cryptoModal": {
+			"copyAddress": "Copy address",
+			"info": "You've decided to deposit {{currency}} in your account.\nYou must send the amount to:",
+			"info2": "Credit will appear after 3 Network Confirmation",
+			"title": "{{currency}} DEPOSIT",
+			"warningMessage": "Use this address just once, if you send more than one time to this address, your coin will be lost. For any problems contact us.",
+			"warningTitle": "WARNING:"
+		},
+		"cryptoCurrency": "Cryptocurrency",
+		"cryptoCurrencyMessage": "Tap on a currency icon to show the address",
+		"currencyError": "Please select a currency",
+		"feeWarning": "T(ransaction fee may apply)",
+		"feeWarning2": " 3% fees will be automatically applied to the transaction",
+		"insertAmount": "Insert amount",
+		"paypal-card": "PAYPAL, CREDIT & DEBIT CARD",
+		"selectCurrency": "Select currency",
+		"withdrawInfo": "Please be careful inserting the address of the cryptocurrency.\nWe can not be held responsible for any errors made when entering the address.",
+		"withdrawalModal": {
+			"text1": "You've decided to make a withdrawal of:",
+			"text2": "Withdrawal will be executed and sent to:",
+			"text3": "Usually withdrawal will be executed in 1 hour!",
+			"title": "CONFIRM WITHDRAWAL"
+		}
+	},
+	"welcomePage": {
+		"link": "Consult the guide",
+		"message1": "You can now request an express courier from LWF network to send or receive a package",
+		"message2": "Join LWF express courier network to start making money with deliveries.\nJust click on the button below to proceed with our verification process,                    it is going to take just few minutes.",
+		"termsMessage": "Clicking on the button you agree with our",
+		"title": "Welcome"
+	}
+}

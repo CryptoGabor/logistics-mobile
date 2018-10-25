@@ -1,0 +1,18 @@
+.tabs .tabbar {
+  background: #005da1;
+}
+
+.tabs .tab-button {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  &[aria-selected=true] {
+    font-size: 3rem;
+    color: #fff;
+    border-bottom: 5px solid #F7A800;
+  }
+  .tab-button-text {
+    font-size: 1.5rem;
+  }
+}

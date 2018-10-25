@@ -1,0 +1,77 @@
+@import '../../theme/variables.scss';
+
+page-account-verification {
+    ion-content {
+        span {
+            color: color($colors, lwf-light-blue);
+        }
+        ion-item {
+            padding: 0 !important;
+        }
+        .verification-step {
+            padding: 0 20px;
+            .verification-img {
+                width: 50px;
+                img {
+                    height: 50px;
+                }
+
+            }
+            ion-icon {
+                background-color: transparent;
+                color: color($colors, lwf-grey);
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+page-account-verification-id,
+page-account-verification-address,
+page-account-verification-selfie {
+    .id-select {
+        max-width: 100% !important;
+        width: 100%;
+        border: 1px solid #ccc;
+        margin: 10px;
+    }
+    .item.item-block .item-inner {
+        border: 0;
+    }
+    .id-pic {
+        background-color: color($colors, lwf-lightest-grey);
+        padding: 20px 0 20px 0;
+        margin: 20px;
+        border-radius: 20px;
+        p {
+            color: color($colors, lwf-dark-grey);
+            font-weight: 500;
+            font-size: 2rem;
+        }
+        img {
+            max-width: 100px;
+        }
+        .selfie-pic {
+            max-width: 300px !important;
+        }
+        .camera-icon {
+            margin-bottom: 20px;
+        }
+    }
+    .button {
+        width:150px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.verification-info {
+    font-size: 1.7rem;
+    color: color($colors, lwf-dark-grey);
+    padding: 20px;
+    text-align: center;
+
+    p {
+        font-weight: bold;
+    }
+}

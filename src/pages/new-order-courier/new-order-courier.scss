@@ -1,0 +1,154 @@
+@import '../../theme/variables.scss';
+
+page-new-order-courier {
+    color: color($colors, lwf-dark-grey);
+    .call-to-action {
+        padding-top: 0;
+    }
+    #instructions {
+        ion-textarea {
+            border: 1px solid color($colors, lwf-light-grey);
+            min-height: 60px
+        }
+        .text-input {
+            margin: 5px;
+        }
+        ol {
+            li {
+                height: 50px;
+            }
+        }
+        .instruction-message {
+            padding: 20px;
+            div {
+                margin-top: 30px;
+            }
+        }
+    }
+    timer-progress {
+        .card {
+            background-color: color($colors, lwf-lightest-grey);
+        }
+    }
+    #order-summary {
+        margin-top: 20px;
+        .order-id {
+            background-color: color($colors, lwf-alternate-grey);
+            color: color($colors, lwf-light-blue);
+            padding: 10px 20px 10px 20px;
+        }
+        .additional-info {
+            background-color: color($colors, lwf-light-blue);
+            padding: 10px 20px 10px 20px;
+            text-align: right;
+            font-size: 1.5rem;
+            color: #fff;
+            span {
+                color: #fff;
+            }
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+        #pickup {
+            color: color($colors, lwf-dark-grey);
+            padding: 10px 20px;
+            border-bottom: 3px solid color($colors, lwf-light-grey);
+            .title {
+                color: color($colors, lwf-lightest-blue);
+            }
+        }
+        #delivery {
+            color: color($colors, lwf-dark-grey);
+            padding: 10px 20px;
+            border-bottom: 3px solid color($colors, lwf-light-grey);
+            .title {
+                color: color($colors, lwf-dark-orange);
+            }
+        }
+        #package {
+            color: color($colors, lwf-dark-grey);
+            padding: 10px 20px;
+            border-bottom: 3px solid color($colors, lwf-light-grey);
+            .title {
+                color: color($colors, lwf-orange);
+            }
+        }
+        #customer-info {
+            color: color($colors, lwf-dark-grey);
+            margin-top:10px;
+            background-color: color($colors, lwf-lightest-grey);
+            padding: 10px 20px;
+            border-bottom: 3px solid color($colors, lwf-light-grey);
+            .title {
+                color: color($colors, lwf-light-blue);
+            }
+            .customer-image{
+                width:40px;
+                height:40px;
+            }
+            .chat-btn{
+                color: color($colors, lwf-light-blue);
+                font-style: italic;
+                text-transform: capitalize;
+                font-size:1.7rem;
+                height:20px;
+                .button-inner{
+                    align-items:flex-start;
+                }
+                ion-icon{
+                    margin-left:10px;
+
+                }
+            }
+        }
+        .date {
+            font-weight: 700;
+            line-height: 1.5;
+            font-size: 1.7rem
+        }
+        .title {
+            margin-top: 0;
+            font-weight: 700;
+            line-height: 2;
+        }
+        .info {
+            padding: 0 0 0 45px;
+            font-size: 1.7rem
+        }
+        .address{
+            color: color($colors, lwf-light-blue);
+            padding: 0 0 0 45px;
+            font-size: 1.7rem
+        }
+        .feedback{
+            padding: 0 0 0 55px;
+            font-size: 1.7rem
+        }
+    }
+    #action-btn {
+        margin-top: 30px;
+        .pay-now {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 200px;
+            button {
+                color: color($colors, lwf-light-blue);
+                font-weight: 700;
+            }
+        }
+        .cancel {
+            display: block;
+            margin: 0 auto;
+            width: 170px;
+            margin-bottom: 10px;
+        }
+        .terms-agreement {
+            text-align: center;
+            color: color($colors, lwf-grey);
+            margin-bottom: 20px;
+        }
+    }
+}

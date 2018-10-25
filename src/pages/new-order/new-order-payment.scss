@@ -1,0 +1,110 @@
+@import '../../theme/variables.scss';
+
+page-new-order-payment {
+  color: color($colors, lwf-dark-grey);
+  .call-to-action {
+    padding-top: 0;
+  }
+  #instructions {
+    ion-textarea {
+      border: 1px solid color($colors, lwf-light-grey);
+      min-height: 60px
+    }
+    .text-input-md {
+      margin: 5px;
+    }
+    ol {
+      li {
+        height: 50px;
+      }
+    }
+    .instruction-message {
+      padding: 20px;
+      div {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  #order-summary {
+    margin-top: 20px;
+    .order-id {
+      background-color: color($colors, lwf-alternate-grey);
+      color: color($colors, lwf-light-blue);
+      padding: 10px 20px 10px 20px;
+    }
+    .total-price {
+      background-color: color($colors, lwf-alternate-grey);
+      padding: 10px 20px 10px 20px;
+      text-align: right;
+      font-size: 2rem;
+      span {
+        color: color($colors, lwf-light-blue);
+      }
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+    .date {
+      color: color($colors, lwf-light-blue);
+      font-weight: 700;
+      line-height: 1.5;
+      font-size: 1.7rem
+    }
+    .title {
+      margin-top: 0;
+      font-weight: 700;
+      line-height: 2;
+    }
+    .info {
+      padding: 0 0 0 45px;
+      font-size: 1.7rem
+    }
+    #pickup {
+      padding: 10px 20px;
+      border-bottom: 3px solid color($colors, lwf-light-grey);
+      .title {
+          color: color($colors, lwf-lightest-blue);
+      }
+    }
+    #delivery {
+      padding: 10px 20px;
+      border-bottom: 3px solid color($colors, lwf-light-grey);
+      .title {
+          color: color($colors, lwf-dark-orange);
+      }
+    }
+    #package {
+      padding: 10px 20px;
+      border-bottom: 3px solid color($colors, lwf-light-grey);
+      .title {
+        color: color($colors, lwf-orange);
+      }
+    }
+  }
+  #action-btn {
+    margin-top: 30px;
+    .pay-now {
+      display: block;
+      margin: 0 auto 10px auto;
+      width: 200px;
+      button {
+        color: color($colors, lwf-light-blue);
+        font-weight: 700;
+      }
+    }
+    .cancel {
+      display: block;
+      margin: 0 auto;
+      width: 170px;
+      margin-bottom: 10px;
+    }
+    .terms-agreement {
+      text-align: center;
+      color: color($colors, lwf-grey);
+      margin-bottom: 20px;
+    }
+  }
+}

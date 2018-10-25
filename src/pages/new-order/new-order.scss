@@ -1,0 +1,199 @@
+@import '../../theme/variables.scss';
+
+page-new-order {
+    .call-to-action {
+        padding-top: 0;
+    }
+    .error-message {
+        align-items: flex-start;
+        padding: 0;
+        .label {
+            font-weight: 700;
+            margin: 0 0 10px 0 !important;
+            flex-basis: 100%;
+        }
+        min-height:15px;
+
+    }
+
+    #address {
+        padding: 10px 10px;
+        border-bottom: 5px solid color($colors, lwf-alternate-grey);
+        .sender-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        input[type='text'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+        }
+        ion-textarea {
+            border: 1px solid color($colors, lwf-light-grey);
+            min-height: 60px;
+        }
+        .text-input {
+            margin: 5px;
+        }
+        .label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            flex-basis: 100%;
+        }
+        .form-image {
+            margin: 0 10px 0 10px;
+            width: 30px;
+            img {
+                width: 100%;
+            }
+            ion-icon {
+                margin-left: 4px;
+                font-size: 35px;
+            }
+        }
+
+    }
+
+    #time-slots {
+        margin: 0 20px;
+        padding: 10px 0 20px 0;
+        border-bottom: 5px solid color($colors, lwf-alternate-grey);
+        ion-datetime {
+            flex-basis: 30%;
+            margin-right: 15px;
+            height: 2em;
+            position: relative;
+            button {
+                border: 1px solid color($colors, lwf-light-grey);
+            }
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        .datetime {
+            padding: 5px;
+        }
+        .label {
+            flex-basis: 100%;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .button {
+            margin: 0;
+        }
+        .error-message {
+            margin-top: 10px;
+            .label{
+                white-space: normal;
+            }
+        }
+    }
+
+    #add-pack {
+        margin: 0 20px;
+        padding: 10px 0;
+        border-bottom: 5px solid color($colors, lwf-alternate-grey);
+        .box-input {
+            align-items: baseline;
+            margin: 20px 0;
+        }
+        .checkbox-container {
+            align-items: center;
+        }
+        .pack-input {
+            align-items: flex-end;
+            max-width: 120px;
+            margin-top: 10px;
+            ion-input {
+                width: 35px;
+                margin-left: 10px;
+                input {
+                    width: 35px;
+                    border: 1px solid color($colors, lwf-light-grey);
+                    display:block;
+                    margin:0;
+                    padding:5px;
+                }
+                &.invalid {
+                    border-left: 7px solid color($colors, lwf-red);
+                }
+            }
+        }
+        .text-input {
+            margin: 5px 10px;
+        }
+        ion-checkbox {
+            margin: auto 10px;
+            &.invalid {
+                .checkbox-icon {
+                    border: 1px solid color($colors, lwf-red);
+                }
+            }
+        }
+        ion-label{
+            white-space: normal;
+        }
+    }
+
+    #price-range {
+        margin: 0 20px 20px 20px;
+        padding: 10px 0 0 0;
+        .range .range-bar {
+            height: 5px;
+            border-radius: 2px;
+        }
+        .range .range-knob {
+            top: 11px;
+            width: 25px;
+            height: 25px;
+        }
+        .price-value {
+            text-align: center;
+            span {
+                color: color($colors, lwf-light-blue);
+            }
+        }
+        .error-message {
+            margin-top: 10px;
+            .label{
+                white-space: normal;
+            }
+        }
+    }
+
+    #credits-info {
+        margin: 0;
+        padding: 20px 0;
+        background-color: color($colors, lwf-light-grey);
+        .owned-credits {
+            text-align: center;
+            font-size: 1.7rem;
+            span {
+                color: color($colors, lwf-red);;
+            }
+        }
+        button {
+            display: block;
+            margin: 5px auto;
+            width: 150px;
+        }
+    }
+
+    #confirm-request {
+        margin: 0;
+        padding: 10px 0;
+        .search-results {
+            text-align: center;
+            background-color: color($colors, lwf-orange);
+            color: #fff;
+            font-size: 2rem;
+            padding: 20px 0;
+        }
+        .request-couriers {
+            padding: 10px 30px;
+        }
+    }
+}

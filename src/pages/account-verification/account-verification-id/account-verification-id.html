@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title ><span translate>accountVerification.title</span></ion-title>
+        <button ion-button menuToggle end>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <form (ngSubmit)="upload(uploadForm)"
+          [formGroup]="uploadForm" *ngIf="profile">
+        <div class="call-to-action" flex-wide>
+            <span translate>accountVerification.step1.title</span>
+            <hr class="bottom-hr-orange"/>
+        </div>
+        <div flex>
+            <ion-item flex-wide>
+                <ion-select formControlName="idType" class="id-select" [placeholder]="'accountVerification.step1.select' | translate" interface="action-sheet">
+                    <ion-option value="id-1" translate>accountVerification.step1.idCard</ion-option>
+                    <ion-option value="id-2" translate>accountVerification.step1.passport</ion-option>
+                    <ion-option value="id-3" translate>accountVerification.step1.driverLic</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <div class="id-pic" flex column align-items-center justify-center (click)="getFrontId()">
+            <img class="camera-icon" src="assets/images/camera-icon.svg" alt="">
+            <img [src]="IDDocFrontImageSrc ? IDDocFrontImageSrc : 'assets/images/id_front.svg'" alt="">
+            <p translate>accountVerification.step1.front</p>
+        </div>
+        <div *ngIf="uploadForm.get('nullFront').errors
+                                        && uploadForm.get('nullFront').errors.backend
+                                        && uploadForm.get('nullFront').errors.backend.nullFront"
+                   i18n>
+            {{uploadForm.get('nullFront').errors.backend.nullFront}}
+        </div>
+        <div *ngIf="uploadForm.get('invalidFront').errors
+                                        && uploadForm.get('invalidFront').errors.backend
+                                        && uploadForm.get('invalidFront').errors.backend.invalidFront"
+                   i18n>
+            {{uploadForm.get('invalidFront').errors.backend.invalidFront}}
+        </div>
+        <div class="id-pic" flex column align-items-center justify-center (click)="getBackId()">
+            <img class="camera-icon" src="assets/images/camera-icon.svg" alt="">
+            <img [src]="IDDocBackImageSrc ? IDDocBackImageSrc : 'assets/images/id_back.svg'" alt="">
+            <p translate>accountVerification.step1.back</p>
+        </div>
+        <div *ngIf="uploadForm.get('nullBack').errors
+                                        && uploadForm.get('nullBack').errors.backend
+                                        && uploadForm.get('nullBack').errors.backend.nullBack"
+                   i18n>
+            {{uploadForm.get('nullBack').errors.backend.nullBack}}
+        </div>
+        <div *ngIf="uploadForm.get('invalidBack').errors
+                                        && uploadForm.get('invalidBack').errors.backend
+                                        && uploadForm.get('invalidBack').errors.backend.invalidBack"
+                   i18n>
+            {{uploadForm.get('invalidBack').errors.backend.invalidBack}}
+        </div>
+        <button bold ion-button orange type="submit"><span translate>buttons.submit</span></button>
+    </form>
+    <div class="verification-info" translate>
+        accountVerification.step1.info
+    </div>
+</ion-content>
+
+

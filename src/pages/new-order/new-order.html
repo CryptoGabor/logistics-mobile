@@ -1,0 +1,261 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>NEW ORDER</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <form *ngIf="profile && wallet"
+          [formGroup]="newOrderForm"
+          (ngSubmit)="createNewOrder(newOrderForm)">
+
+        <section id="address">
+            <div class="call-to-action" flex-wide>
+                ADDRESS
+                <hr class="bottom-hr-orange"/>
+            </div>
+            <div flex flex-wrap>
+                <ion-label color="lwf-light-blue" stacked>From</ion-label>
+                <div class="sender-input" flex flex-wide
+                     [class.invalid]="newOrderForm.controls['sender'].hasError('required') &&
+                                            newOrderForm.controls['sender'].touched">
+                    <input type="text"
+                           flex-one
+                           placeholder="Sender"
+                           [class.invalid]="newOrderForm.controls['sender'].hasError('required') &&
+                                            newOrderForm.controls['sender'].touched"
+                           formControlName="sender"/>
+                    <div align-self-center class="form-image"
+                         (click)="setUserName()">
+                        <img src="assets/images/icon-user-blue.svg">
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="newOrderForm.controls['sender'].hasError('required') &&
+                                            newOrderForm.controls['sender'].touched">
+                    *Please enter the sender name
+                </ion-item>
+                <div class="sender-input" flex flex-wide
+                     [class.invalid]="(newOrderForm.controls['locationFromAddress'].hasError('required') || newOrderForm.controls['locationFromCity'].hasError('required')) &&
+                                            newOrderForm.controls['locationFromAddress'].touched">
+                    <input type="text"
+                           placeholder="Enter an address"
+                           geocomplete
+                           flex-one
+                           [class.invalid]="(newOrderForm.controls['locationFromAddress'].hasError('required') || newOrderForm.controls['locationFromCity'].hasError('required')) &&
+                                            newOrderForm.controls['locationFromAddress'].touched"
+                           formControlName="locationFromAddress"
+                           (onPlaceSelected)="updateLocation($event, 'locationFrom')"/>
+                    <div align-self-center class="form-image">
+                        <ion-icon name="pin"
+                                  [color]="isYou ? 'lwf-orange' : 'lwf-light-grey'"
+                                  (click)="getCurrentAddress('locationFrom')"></ion-icon>
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="(newOrderForm.controls['locationFromAddress'].hasError('required') || newOrderForm.controls['locationFromCity'].hasError('required')) &&
+                                            newOrderForm.controls['locationFromAddress'].touched">
+                    *Please enter a valid address
+                </ion-item>
+            </div>
+            <div flex flex-wrap>
+                <ion-label color="lwf-light-blue" stacked>To</ion-label>
+                <div class="sender-input" flex flex-wide
+                     [class.invalid]="newOrderForm.controls['receiver'].hasError('required') &&
+                                            newOrderForm.controls['receiver'].touched">
+                    <input type="text"
+                           flex-one
+                           placeholder="Receiver"
+                           [class.invalid]="newOrderForm.controls['receiver'].hasError('required') &&
+                                            newOrderForm.controls['receiver'].touched"
+                           formControlName="receiver"/>
+                    <div align-self-center class="form-image"
+                         (click)="setUserName('receiver')">
+                        <img src="assets/images/icon-user-blue.svg">
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="newOrderForm.controls['receiver'].hasError('required') &&
+                                            newOrderForm.controls['receiver'].touched">
+                    *Please enter the receiver name
+                </ion-item>
+                <div class="sender-input" flex flex-wide
+                     [class.invalid]="(newOrderForm.controls['locationToAddress'].hasError('required') || newOrderForm.controls['locationToCity'].hasError('required')) &&
+                                            newOrderForm.controls['locationToAddress'].touched">
+                    <input type="text"
+                           flex-one
+                           placeholder="Enter an address"
+                           geocomplete
+                           [class.invalid]="(newOrderForm.controls['locationToAddress'].hasError('required') || newOrderForm.controls['locationToCity'].hasError('required'))  &&
+                                            newOrderForm.controls['locationToAddress'].touched"
+                           formControlName="locationToAddress"
+                           (onPlaceSelected)="updateLocation($event, 'locationTo')"/>
+                    <div align-self-center class="form-image">
+                        <ion-icon name="pin"
+                                  [color]="isYou ? 'lwf-light-grey' : 'lwf-orange'"
+                                  (click)="getCurrentAddress('locationTo')"></ion-icon>
+                    </div>
+                </div>
+                <ion-item no-lines class="error-message"
+                          *ngIf="(newOrderForm.controls['locationToAddress'].hasError('required') || newOrderForm.controls['locationToCity'].hasError('required'))&&
+                                            newOrderForm.controls['locationToAddress'].touched">
+                    *Please enter a valid address
+                </ion-item>
+            </div>
+        </section>
+        <section id="time-slots">
+            <div class="call-to-action" flex-wide>
+                TIME SLOT
+                <hr class="bottom-hr-orange"/>
+            </div>
+            <div flex flex-wrap align-items-center>
+                <ion-label color="lwf-light-blue" stacked>Time to pick up</ion-label>
+                <ion-datetime displayFormat="HH:mm"
+                              pickerFormat="HH mm"
+                              placeholder="From"
+                              [class.invalid]="newOrderForm.controls['pickupFrom'].hasError('required') &&
+                                               newOrderForm.controls['pickupFrom'].touched"
+                              formControlName="pickupFrom"></ion-datetime>
+                <ion-datetime displayFormat="HH:mm"
+                              pickerFormat="HH mm"
+                              placeholder="To"
+                              [class.invalid]="newOrderForm.controls['pickupTo'].hasError('required') &&
+                                               newOrderForm.controls['pickupTo'].touched"
+                              formControlName="pickupTo"></ion-datetime>
+                <input type="button" value="urgent" ion-button outline small color="lwf-light-blue"
+                       (click)="setUrgent()">
+            </div>
+            <div flex flex-wrap>
+                <ion-label color="lwf-light-blue" stacked>Time to delivery</ion-label>
+                <ion-datetime displayFormat="HH:mm"
+                              pickerFormat="HH mm"
+                              placeholder="From"
+                              [class.invalid]="newOrderForm.controls['deliveryFrom'].hasError('required') &&
+                                               newOrderForm.controls['deliveryFrom'].touched"
+                              formControlName="deliveryFrom"></ion-datetime>
+                <ion-datetime displayFormat="HH:mm"
+                              pickerFormat="HH mm"
+                              placeholder="To"
+                              [class.invalid]="newOrderForm.controls['deliveryTo'].hasError('required') &&
+                                               newOrderForm.controls['deliveryTo'].touched"
+                              formControlName="deliveryTo"></ion-datetime>
+            </div>
+            <ion-item no-lines class="error-message"
+                      *ngIf="newOrderForm.hasError('timeError') &&
+                             (newOrderForm.controls['pickupFrom'].touched ||
+                             newOrderForm.controls['pickupTo'].touched ||
+                             newOrderForm.controls['deliveryFrom'].touched ||
+                             newOrderForm.controls['deliveryTo'].touched) ">
+                *Please enter the time slots your prefer for pick up and delivering
+            </ion-item>
+        </section>
+        <section id="add-pack">
+            <div class="call-to-action" flex-wide>
+                ADD PACK
+                <hr class="bottom-hr-orange"/>
+            </div>
+            <div flex flex-wrap justify-between>
+                <div class="pack-input" flex justify-between>
+                    <img width="30" height="30" src="assets/images/icon-box-sm.svg">
+                    <ion-input type="number"
+                               placeholder="0"
+                               min="0"
+                               onfocus="this.value=''"
+                               [class.invalid]="newOrderForm.hasError('boxesError') &&
+                                                newOrderForm.controls['numberOfSmallBoxes'].touched"
+                               formControlName="numberOfSmallBoxes"></ion-input>
+                </div>
+                <div class="pack-input" flex flex-wrap justify-between>
+                    <img width="40" height="40" src="assets/images/icon-box-md.svg">
+                    <ion-input type="number"
+                               placeholder="0"
+                               min="0"
+                               onfocus="this.value=''"
+                               [class.invalid]="newOrderForm.hasError('boxesError') &&
+                                                newOrderForm.controls['numberOfMediumBoxes'].touched"
+                               formControlName="numberOfMediumBoxes"></ion-input>
+                </div>
+                <div class="pack-input" flex flex-wrap justify-between>
+                    <img width="50" height="50" src="assets/images/icon-box-lg.svg">
+                    <ion-input type="number"
+                               placeholder="0"
+                               min="0"
+                               onfocus="this.value=''"
+                               [class.invalid]="newOrderForm.hasError('boxesError') &&
+                                                newOrderForm.controls['numberOfLargeBoxes'].touched"
+                               formControlName="numberOfLargeBoxes"></ion-input>
+                </div>
+            </div>
+            <div class="checkbox-container" flex flex-wrap>
+                <ion-checkbox color="lwf-light-blue"
+                              [class.invalid]="newOrderForm.controls['agreement'].hasError('required') &&
+                                               newOrderForm.controls['agreement'].touched"
+                              formControlName="agreement"></ion-checkbox>
+                <ion-label>I declare that the parcel respect the terms of LWF policy</ion-label>
+            </div>
+            <ion-item no-lines class="error-message"
+                      *ngIf="newOrderForm.hasError('boxesError') &&
+                             (newOrderForm.controls['numberOfSmallBoxes'].touched ||
+                             newOrderForm.controls['numberOfMediumBoxes'].touched ||
+                             newOrderForm.controls['numberOfLargeBoxes'].touched) ">
+                *Please fill at least one of the field
+            </ion-item>
+            <ion-item no-lines class="error-message"
+                      *ngIf="newOrderForm.controls['agreement'].hasError('required') &&
+                             newOrderForm.controls['agreement'].touched">
+                *Please accept the parcel agreement
+            </ion-item>
+        </section>
+        <section id="price-range">
+            <div class="call-to-action" flex-wide>
+                PRICE RANGE
+                <hr class="bottom-hr-orange"/>
+            </div>
+            <ion-range
+                    disabled="{{priceRangeMax === 0}}"
+                    [min]="priceRangeMin"
+                    [max]="priceRangeMax"
+                    color="lwf-light-blue"
+                    [class.invalid]="newOrderForm.controls['priceRange'].value === 0 &&
+                                     newOrderForm.controls['priceRange'].touched"
+                    formControlName="priceRange"
+                    (mouseup)="filterCouriers()">
+                <div range-left>{{priceRangeMin.toFixed(2)}}Bc</div>
+                <div range-right>{{priceRangeMax.toFixed(2)}}Bc</div>
+            </ion-range>
+            <div class="price-value">
+                Price: <span>{{newOrderForm.get("priceRange").value.toFixed(2)}} Bc</span>
+            </div>
+            <ion-item no-lines class="error-message"
+                      *ngIf="newOrderForm.controls['priceRange'].value == 0 &&
+                             newOrderForm.controls['priceRange'].touched">
+                *Please price must be more than 0
+            </ion-item>
+        </section>
+        <section id="credits-info">
+            <div class="owned-credits">
+                Your Bundle credits: <span>{{wallet.credit}} Bc</span>
+            </div>
+            <button *ngIf="wallet.credit <= 0"
+                    gotopage="wallet"
+                    ion-button
+                    color="lwf-light-blue"
+                    mode="ios"
+                    small strong>Deposit
+            </button>
+        </section>
+        <section id="confirm-request">
+            <div class="search-results">{{couriersFound}} Couriers for less than {{highestPrice > 0 ?
+                highestPrice.toFixed(2) : 0}} Bc
+            </div>
+            <div class="request-couriers">
+                <button ion-button color="lwf-light-blue" mode="ios" strong block
+                        type="submit">
+                    Request a courier
+                </button>
+            </div>
+        </section>
+    </form>
+</ion-content>

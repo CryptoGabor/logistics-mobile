@@ -1,0 +1,28 @@
+@import '../../../../theme/variables.scss';
+
+page-withdrawal-modal{
+    #main-content{
+        padding:15px;
+        color: color($colors, lwf-dark-grey);
+        ion-item{
+            color: color($colors, lwf-dark-grey);
+            font-size: 2rem;
+            text-align: center;
+            .label {
+                word-break: break-word;
+                white-space: normal;
+            }
+            .address{
+                word-break: break-all;
+            }
+            [highlight]{
+                margin-top:10px;
+                font-size:2.3rem;
+            }
+        }
+        button{
+            font-size:1.7rem;
+        }
+    }
+
+}

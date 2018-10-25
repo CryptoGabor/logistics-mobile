@@ -1,0 +1,76 @@
+@import '../../theme/variables.scss';
+
+page-signup {
+    #main-container{
+        padding:10px 0;
+        background-color: color($colors, lwf-light-blue);
+    }
+    .call-to-action{
+        height:30px;
+        background-color: #fff;
+        padding:20px 0;
+    }
+    .error-message {
+        align-items: flex-start;
+        padding: 0;
+        .label {
+            font-weight: 700;
+            margin: 0 !important;
+            flex-basis: 100%;
+        }
+        min-height: 15px;
+    }
+    #form-container {
+        padding: 30px 30px 10px 30px;
+        background-color: #fff;
+        min-height:60%;
+        .signup-input {
+            margin-bottom: 10px;
+            &.invalid {
+                border-left: 7px solid color($colors, lwf-red);
+            }
+        }
+        input[type='text'],
+        input[type='email'] {
+            border: 1px solid color($colors, lwf-light-grey);
+            background-color: #fff;
+            color: color($colors, lwf-dark-grey);
+            padding: 3px 5px;
+        }
+
+        .text-input {
+            margin: 5px;
+        }
+        .label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            flex-basis: 100%;
+        }
+    }
+
+    .terms-agreement {
+        .item-inner {
+            border-bottom: 0 !important;
+        }
+
+    }
+    /* ONBOARD */
+    .onboard {
+        padding:30px 20px 20px 20px;
+        font-size:1.6rem;
+        color: #fff;
+        background-color: color($colors, lwf-light-blue);
+    }
+
+    .onboard-title {
+        color: color($colors, lwf-orange);
+        font-size: 1.7em;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+    }
+
+    .onboard-message {
+        font-size: 1.2em;
+    }
+
+}

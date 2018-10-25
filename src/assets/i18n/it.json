@@ -1,0 +1,166 @@
+{
+	"accountVerification": {
+		"notSubmitted": "Non Confermato",
+		"step1": {
+			"back": "Retro",
+			"driverLic": "Patente di guida",
+			"front": "Fronte",
+			"idCard": "Carta d'identità",
+			"info": "Clicca su fronte e retro per fare una foto del documento selezionato",
+			"passport": "Passaporto",
+			"select": "Seleziona il tipo di documento",
+			"title": "DOCUMENTO IDENTITA"
+		},
+		"step2": {
+			"bank": "Dichiarazione della banca",
+			"bill": "Bolletta",
+			"certificate": "Certificato di residenza",
+			"info": "Cliccare sul riquadro sopra per fare una foto della prova di residenza selezionata",
+			"select": "Seleziona prova di residenza",
+			"title": "INDIRIZZO"
+		},
+		"step3": {
+			"info": "E' necessario effettuare una foto col documento selezionato in precedenza e un foglio con scritto il seguente testo:",
+			"title": "SELFIE"
+		},
+		"submitted": "Confermato",
+		"text": "Si prega di fare una foto dei documenti richiesti.\nDevono essere foto ad alta qualità, i documenti devono essere chiari e leggibili.\nSi prega di non caricare foto sfocate.",
+		"title": "VERIFICA ACCOUNT",
+		"verified": "Verificato"
+	},
+	"buttons": {
+		"becomeCourier": "Diventa un Corriere",
+		"gotoHome": "Vai alla Homepage",
+		"login": "Accedi",
+		"signup": "Registrati",
+		"submit": "Invia",
+		"vote": "Vota"
+	},
+	"common": {
+		"courier": "Corriere",
+		"customer": "Cliente",
+		"delivery": "Consegna",
+		"historyLink": "Vai allo storico degli ordini",
+		"onBoard": "Spedisci rapidamente un pacco con uno\ndei corrieri della rete LWF o diventa \nanche tu un corriere e guadagna subito\ncon le consegne.",
+		"onBoardTitle": "LWF INSTANT DELIVERY",
+		"pickup": "Ritiro",
+		"price": "Prezzo",
+		"route": "Percorso"
+	},
+	"creditsbar": {
+		"title": "I tuoi Bundle Credits"
+	},
+	"errors": {
+		"linkExpiredMessage": "Ci scusiamo ma il tuo link di attivazione è scaduto.\nClicca sul pulsante per procedere nuovamente alla registrazione. ",
+		"linkExpiredTitle": "Link Scaduto"
+	},
+	"feedback": {
+		"placeholder": "Scrivi una recensione",
+		"review": "Lascia un feedback",
+		"title": "FEEDBACK"
+	},
+	"form": {
+		"DoB": "Data di nascita",
+		"DoBerror": "Inserire Data di nascita",
+		"address": "Indirizzo",
+		"addressError": "Inserire Indirizzo",
+		"city": "Città",
+		"cityError": "Inserire la Città",
+		"confirmMobileError": "Codice incorretto",
+		"confirmMobileMessage": "Abbiamo inviato un SMS con un codice di\nconferma al numero di telefono fornito.\nInserisci il codice nel campo di verifica.",
+		"confirmMobileTitle": "Conferma Telefono",
+		"confirmPass": "Conferma Password",
+		"confirmPassError": "Inserire nuovamente la password",
+		"country": "Nazione",
+		"countryError": "Inserire la Nazione",
+		"countrySelect": "Seleziona la tua Nazione",
+		"email": "E-mail",
+		"emailError": "Inserire un indirizzo e-mail valido",
+		"firstName": "Nome",
+		"firstNameError": "Inserire Nome",
+		"forgottenPassword": "Password dimenticata?",
+		"lastName": "Cognome",
+		"lastNameError": "Inserire Cognome",
+		"loginTitle": "Login",
+		"mobile": "Cellulare",
+		"mobileError1": "Inserire numero Cellulare",
+		"mobileError2": "Il numero di cellulare deve avere dalle 10 alle 13 cifre",
+		"mobilePlaceholder": "",
+		"mobilePrefix": "Prefisso",
+		"optional": "(Facoltativo)",
+		"password": "Password",
+		"passwordError": "Inserire la password",
+		"passwordError2": "La password deve avere almeno 8 caratteri",
+		"passwordError3": "Le password non corrispondono",
+		"region": "Regione",
+		"regionError": "Inserire la Regione",
+		"registrationTitle": "Registrazione",
+		"ssn": "Codice Fiscale",
+		"termsError": "Clicca sulla casella per accettare i nostri Termini di utilizzo",
+		"termsLink": "Termini di utilizzo",
+		"termsMessage": "Effettuando l'accesso dichiari di accettare i nostri",
+		"termsMessage2": "Clicca sulla casella per accettare i nostri ",
+		"uNamePassError": "Nome Utente o password non sono corretti",
+		"username": "Nome Utente",
+		"usernameError": "Inserire Nome Utente",
+		"usernameError2": "Il nome utente deve avere massimo 16 caratteri",
+		"zipCode": "C.A.P.",
+		"zipCodeError": "Inserire C.A.P."
+	},
+	"home": {
+		"orderCard": {
+			"ACCEPTED": "ACCETTATO",
+			"DELIVERED": "CONSEGNATO"
+		},
+		"title": "HOME"
+	},
+	"homeCourier": {
+		"distance": "Distanza",
+		"filterBy": "Ordina per",
+		"orderCard": {
+			"ACCEPTED": "ACCETTATO",
+			"DELIVERED": "CONSEGNATO"
+		},
+		"time": "Tempo",
+		"title": "GESTISCI ORDINI"
+	},
+	"newOrder": {
+		"title": "NUOVO ORDINE"
+	},
+	"orderHistory": {
+		"courier": "CORRIERE",
+		"customer": "CLIENTE",
+		"price": "PREZZO",
+		"status": "STATO",
+		"title": "STORICO ORDINI"
+	},
+	"orderStatus": {
+		"ACCEPTED": "ACCETTATO",
+		"DELIVERED": "CONSEGNATO",
+		"NOT-DELIVERED": "NON CONSEGNATO",
+		"TRANSIT": "IN TRANSITO",
+		"TRANSIT-2": "2&deg; TENTATIVO",
+		"orderN": "Ordine N.",
+		"title": "DETTAGLIO ORDINE"
+	},
+	"requests": {
+		"requestCard": {
+			"customer": "Cliente",
+			"delivery": "Consegna",
+			"pickup": "Ritiro",
+			"price": "Prezzo",
+			"route": "Percorso"
+		},
+		"title": "RICHIESTE"
+	},
+	"settings": {
+		"title": "INDIRIZZO"
+	},
+	"welcomePage": {
+		"link": "Consulta la guida",
+		"message1": "Ora puoi richiedere un corriere espresso dalla rete LWF per inviare o ricevere un pacco",
+		"message2": "Diventa un corriere LWF per iniziare a guadagnare con le consegne.\nClicca sul pulsante in basso per procedere alla verifica, richiederà solo qualche minuto.",
+		"termsMessage": "Cliccando sul pulsante dichiari di accettare i nostri",
+		"title": "Benvenuto"
+	}
+}

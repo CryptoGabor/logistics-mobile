@@ -1,0 +1,33 @@
+@import '../../../theme/variables.scss';
+
+page-link-expired {
+    #main-content {
+        align-content: flex-start;
+        .success-box {
+            align-content: flex-start;
+        }
+        .success-icon, .success-icon-check {
+            font-size: 6.5em;
+            padding: 30px;
+            color: color($colors, lwf-red);
+        }
+
+        .success-title {
+            font-size: 1.5em;
+            padding: 10px;
+            color: color($colors, lwf-blue);
+            text-transform: uppercase;
+        }
+
+        .success-message {
+            font-size: 1.25em;
+            line-height: 1.9em;
+            font-weight: 100;
+            color: color($colors, lwf-black);
+
+            .button-separator {
+                flex-basis: 100%;
+            }
+        }
+    }
+}

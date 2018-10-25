@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title><span translate>feedback.title</span></ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <section *ngIf="profile" id="profile-info" flex flex-wrap column align-items-center>
+            <ion-item no-lines>
+                    <img id="profile-image"
+                         [src]="profile.avatarImage ? profile.avatarImage : 'assets/images/default_avatar.png'">
+                <div class="profile-name">{{profile.user.username}}</div>
+                <div class="profile-score">Feedback: <strong>{{profile.feedback}}</strong></div>
+            </ion-item>
+    </section>
+    <form *ngIf="profile"
+          [formGroup]="feedbackForm"
+          (ngSubmit)="sendFeedback(feedbackForm)">
+    <section id="leave-feedback">
+            <div class="feedback-title" translate>feedback.review</div>
+        <star-rating-comp  [starType]="'svg'"
+                           [staticColor]="'ok'"
+                           [size]="'large'"
+                           [speed]="'noticeable'"
+                           formControlName="score"
+                           (onClick)="onClick($event)"
+                           (onRatingChange)="onRatingChange($event)">
+            </star-rating-comp>
+            <textarea [placeholder]="'feedback.placeholder' | translate" formControlName="review"></textarea>
+            <button ion-button type="submit" color="lwf-orange" wide translate>buttons.vote</button>
+    </section>
+    </form>
+</ion-content>

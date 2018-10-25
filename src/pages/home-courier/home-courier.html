@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title><span translate>homeCourier.title</span></ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-toolbar no-border class="credits-bar">
+        <div><span translate>creditsbar.title</span>: <span class="credits-num" *ngIf="wallet"> {{wallet.credit}}Bc</span></div>
+    </ion-toolbar>
+    <div class="inner-container">
+        <div class="order-by"><span translate>homeCourier.filterBy</span>:
+            <a (click)="sortByDistance()"><span translate>homeCourier.distance</span></a> -
+            <a (click)="sortByTime()"><span translate>homeCourier.time</span></a></div>
+        <ion-card class="order-card"
+                  [ngClass]="order.state === 'ACCEPTED' ? 'accepted' : 'delivering'"
+                  *ngFor="let order of orders;"
+                  (click)="goToOrderStatus(order.id)">
+            <ion-item>
+                <div class="order-card-header" flex>
+                    <div class="order-card-id" flex align-items-center>
+                        <img src="{{order.state === 'ACCEPTED' ? 'assets/images/pick-up.svg' : 'assets/images/dropoff.svg'}}">
+                        <div>
+                            <h2 class="order-id">{{order.id}}</h2>
+                            <p class="order-status-pending" translate>homeCourier.orderCard.{{order.state}}</p>
+                        </div>
+                    </div>
+                    <div class="order-courier">
+                        <div><span translate>common.customer</span>:</div>
+                        <div><strong>{{order.buyer.user.first_name}} {{order.buyer.user.last_name}}</strong></div>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-card-content flex justify-between align-items-stretch>
+                <div class="order-addresses">
+                    <ion-item>
+                        <div *ngIf="order.state === 'ACCEPTED'">
+                            <div class="order-date">
+                                <span translate>common.pickup</span>: {{order.pickupFrom | time}}/{{order.pickupTo | time}}
+                            </div>
+                            <div>
+                                {{order.locationFromAddress}}
+                            </div>
+                        </div>
+                        <div *ngIf="order.state === 'TRANSIT' || order.state === 'TRANSIT-2'">
+                            <div class="order-date">
+                                <span translate>common.delivery</span>:  {{order.deliveryFrom | time}}/{{order.deliveryTo | time}}
+                            </div>
+                            <div>
+                                {{order.locationToAddress}}
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+                <div class="order-route-info">
+                    <div><span translate>common.route</span>:</div>
+                    <div>{{order.distance | distanceInKms}}</div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <div class="history-link" text-center wide>
+            <a (click)="goToOrderHistory()" translate>
+                common.historyLink
+            </a>
+        </div>
+    </div>
+
+</ion-content>
+

@@ -1,0 +1,89 @@
+$circle-size: 240px;
+$circle-background: #fff;
+$circle-color: color($colors, lwf-green);
+$inset-size: 200px;
+$inset-color: color($colors, lwf-lightest-grey);
+;
+$transition-length: 1s;
+$shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+$percentage-color: color($colors, lwf-light-blue);
+$percentage-font-size: 22px;
+#timer {
+
+    .radial-progress {
+        margin: 0 auto;
+        width: $circle-size;
+        height: $circle-size;
+        background-color: $circle-background;
+        border-radius: 50%;
+
+        .circle {
+            .fill,
+            .mask,
+            .shadow {
+                width: $circle-size;
+                height: $circle-size;
+                position: absolute;
+                border-radius: 50%;
+            }
+
+            .shadow {
+                box-shadow: $shadow inset;
+            }
+
+            .fill,
+            .mask {
+                -webkit-backface-visibility: hidden;
+                transition: -webkit-transform $transition-length;
+                transition: -ms-transform $transition-length;
+                transition: transform $transition-length;
+                border-radius: 50%;
+            }
+
+            .mask {
+                clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+
+                .fill {
+                    clip: rect(0px, $circle-size/2, $circle-size, 0px);
+                    background-color: $circle-color;
+                }
+            }
+        }
+
+        .inset {
+            width: $inset-size;
+            height: $inset-size;
+            position: absolute;
+            margin-left: ($circle-size - $inset-size)/2;
+            margin-top: ($circle-size - $inset-size)/2;
+            background-color: $inset-color;
+            border-radius: 50%;
+            box-shadow: $shadow;
+
+            .accept-order {
+                width: 140px;
+                height: 140px;
+                border-radius: 100%;
+                position: absolute;
+                text-align: center;
+                font-weight: 800;
+                top: 30px;
+                left: 30px;
+                margin: 0;
+            }
+        }
+    }
+    ion-item{
+        background-color: $inset-color;
+    }
+    .percentage {
+        width: 100%;
+        line-height: 1;
+        text-align: left;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: $percentage-color;
+        font-weight: 800;
+        font-size: $percentage-font-size;
+    }
+}
+

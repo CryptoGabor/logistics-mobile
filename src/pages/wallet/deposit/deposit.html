@@ -1,0 +1,113 @@
+<!--
+  Generated template for the DepositPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>WALLET</ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-toolbar no-border class="credits-bar">
+        <div>Your Bundle Credits: <span *ngIf="wallet"> {{wallet.credit}}Bc</span></div>
+    </ion-toolbar>
+
+    <div class="call-to-action" flex-wide>
+        DEPOSIT
+        <hr class="bottom-hr-orange"/>
+    </div>
+    <ion-icon class="tooltip" name="ios-help-circle-outline" (click)="openTooltip()"></ion-icon>
+
+    <section class="deposit-block">
+        <div class="deposit-title" wide> PAYPAL, CREDIT & DEBIT CARD</div>
+
+        <div id="card-deposit" class="deposit-icons" flex flex-wrap justify-center>
+            <img src="assets/images/paypal.svg"/>
+            <img src="assets/images/mastercard.svg"/>
+            <img src="assets/images/visa.svg"/>
+            <div flex-wide text-center>(Transaction fee may apply)</div>
+        </div>
+
+        <div class="deposit-form" flex flex-wrap>
+            <div id="form-container" flex flex-wide align-items-center justify-center>
+                <form [formGroup]="depositForm"
+                      flex-wide>
+                    <div class="deposit-input" flex flex-wide
+                         [class.invalid]="depositForm.controls['amount'].hasError('required') &&
+                                            depositForm.controls['amount'].touched">
+                        <input type="number" flex-wide
+                               placeholder="Insert amount"
+                               [class.invalid]="depositForm.controls['amount'].hasError('required') &&
+                                            depositForm.controls['amount'].touched"
+                               formControlName="amount"/>
+                    </div>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="depositForm.controls['amount'].hasError('required') &&
+                                     depositForm.controls['amount'].touched">
+                        *Insert a valid amount
+                    </ion-item>
+                    <ion-item no-lines class="deposit-input" flex flex-wide
+                              [class.invalid]="depositForm.controls['currency'].hasError('required') &&
+                                            depositForm.controls['currency'].touched">
+                        <ion-label hidden>Select currency</ion-label>
+                        <ion-select flex-wide
+                                    formControlName="currency"
+                                    placeholder="Select currency"
+                                    interface="action-sheet"
+                                    multiple="false"
+                                    [selectOptions]="selectOptions">
+                            <ion-option value="EUR">
+                                &euro;
+                                EUR
+                            </ion-option>
+                            <ion-option value="USD">
+                                &#36;
+                                USD
+                            </ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item no-lines class="error-message"
+                              *ngIf="depositForm.controls['currency'].hasError('required') &&
+                                     depositForm.controls['currency'].touched">
+                        *Please select a currency
+                    </ion-item>
+                    <ion-item no-lines id="paypal-button" class="paypal-input">
+                    </ion-item>
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="deposit-block">
+        <div class="deposit-title" wide>CRYPTOCURRENCY</div>
+
+        <div id="crypto-deposit" class="deposit-icons" flex text-center flex-wrap justify-around>
+            <div (click)="openCryptoModal('LWF')">
+                <img src="assets/images/lwf-coin.svg"/>
+                <div>LWF</div>
+            </div>
+            <div (click)="openCryptoModal('BTC')">
+                <img src="assets/images/btc.svg"/>
+                <div>Bitcoin</div>
+            </div>
+            <div (click)="openCryptoModal('Z COIN')">
+                <img src="assets/images/zcoin-xzc.svg"/>
+                <div>Z Coin</div>
+            </div>
+            <div (click)="openCryptoModal('REDDCOIN')">
+                <img src="assets/images/reddcoin.svg"/>
+                <div>Reddcoin</div>
+            </div>
+        </div>
+        <div wide text-center> Press a currency to show the address</div>
+    </section>
+
+</ion-content>

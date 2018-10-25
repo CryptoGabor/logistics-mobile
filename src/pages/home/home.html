@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title><span translate>home.title</span></ion-title>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <ion-toolbar no-border class="credits-bar">
+        <div><span translate>creditsbar.title</span>: <span class="credits-num" *ngIf="wallet"> {{wallet.credit}}Bc</span></div>
+    </ion-toolbar>
+    <div class="inner-container">
+
+        <ion-card class="order-card"
+                  [ngClass]="order.state === 'ACCEPTED' ? 'accepted' : 'delivering'"
+                  *ngFor="let order of orders;"
+                  (click)="orderAction(order)">
+            <ion-item>
+                <div class="order-card-header" flex>
+                    <div class="order-card-id" flex align-items-center>
+                        <img src="{{order.state === 'ACCEPTED' ? 'assets/images/pick-up.svg' : 'assets/images/dropoff.svg'}}">
+
+                        <div>
+                            <h2 class="order-id">{{order.id}}</h2>
+                            <p class="order-status-pending" translate>home.orderCard.{{order.state}}</p>
+                        </div>
+                    </div>
+                    <div class="order-courier">
+                        <div><span translate>common.courier</span>:</div>
+                        <div><strong>{{order.courier.user.username}}</strong></div>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-card-content flex justify-between align-items-stretch>
+                <div class="order-addresses">
+                    <ion-item>
+                        <div class="order-date"> {{order.deliveryFrom | time}}</div>
+                        <div>{{order.locationToAddress}}</div>
+                    </ion-item>
+                </div>
+            </ion-card-content>
+        </ion-card>
+
+        <div class="history-link"
+             text-center wide>
+            <a (click)="goToOrderHistory()" translate>
+                common.historyLink
+            </a>
+        </div>
+
+    </div>
+
+</ion-content>
+

@@ -1,0 +1,113 @@
+@import '../../theme/variables.scss';
+
+page-requests {
+    .requests-toggle {
+        padding: 0 20px;
+        .toolbar-background {
+            background-color: color($colors, lwf-light-blue);
+        }
+        span {
+            font-size: 1.7rem;
+            color: #fff;
+        }
+    }
+    #request-list {
+        .request-card {
+            .request-card-header {
+                color: color($colors, lwf-dark-grey);
+                .request-order-id {
+                    margin-right: 30px;
+                    img {
+                        margin: 0 10px;
+                    }
+                    .order-id {
+                        color: color($colors, lwf-light-blue);
+                        font-weight: 700;
+                    }
+                }
+                .request-order-customer {
+                }
+            }
+            .request-order-price {
+                color: #fff;
+                background-color: color($colors, lwf-lightest-blue);
+                text-align: right;
+                padding: 5px;
+                .label {
+                    margin: 0 3px 0 0;
+                }
+                &.item-block {
+                    min-height: 0;
+                }
+            }
+            .request-order-addresses {
+                padding: 0 10px;
+                word-break: break-all;
+                color: color($colors, lwf-light-blue);
+                .item{
+                    font-size: 1.3rem;
+                    border-bottom: 1px solid color($colors, lwf-grey);
+                    background-color: color($colors, lwf-lightest-grey);
+                    .label {
+                        white-space: normal;
+                        word-break: break-word;
+                        color: color($colors, lwf-light-blue);
+                    }
+                    .order-date {
+                        color: color($colors, lwf-dark-grey);
+                    }
+                }
+                .item:last-child {
+                    border: 0;
+                }
+            }
+            .request-route-info {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: color($colors, lwf-blue);
+                color: #fff;
+                flex-basis: 40%;
+            }
+            .card-content {
+                padding: 0;
+                background-color: color($colors, lwf-lightest-grey);
+            }
+        }
+    }
+    #requests-landing {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        height: 100%;
+        width:100%;
+        padding-top:30px;
+        position:fixed;
+        background: linear-gradient(
+                rgba(55, 55, 55, 0.65),
+                rgba(55, 55, 55, 0.65)
+        ), url("../../assets/images/mobile_background.jpeg") no-repeat center center;
+        background-size: cover;
+        div {
+            margin-bottom:40px;
+            h2 {
+                margin: 0;
+                color: color($colors, lwf-orange)
+            }
+            p {
+                color: #fff;
+                width: 250px;
+                font-size: 1.8rem;
+            }
+        }
+        button{
+            background-color: #fff;
+        }
+    }
+
+}
