@@ -1,43 +1,41 @@
-# LWF MOBILE - GETTING STARTED #
+# Local World Forwarders Mobile APP #
 
-## Local World Forwarders Mobile APP ##
 
-### Setup ###
+## Base Setup ##
 
-* [Install Node and (obviously) NPM](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
-* [Install Ionic](https://ionicframework.com/getting-started)
-* **git clone** git@bitbucket.org:innoviu/localworldforwardersmobile.git
-* In your project path run: **npm install**
-* Serve the project via Browser running: **ionic serve**
+- Install Node and Npm
+-- Reccomended Npm vers. 6.1.0
+-- Reccomended Node vers. 8.11.2
+- Install Ionic
+-- Reccomended Ionic vers. 3.20.0
+- Install Cordova
+-- Reccomended Cordova vers. 8.0.0
 
-## Prerequisites Android ##
 
-* ionic: ```3.20.0```
-* codrova: ```8.0.0```
-* npm: ```3.10.10```
-* node: ```6.11.3```
-* adb-tools **or** Android Studio
-* gradle: ^2.2.3 (On linux you need: /usr/bin/gradle)
-* java: 8
+## Configs ##
 
-## Run on Android ##
-If you want to run the project on your Android make sure that:
+- all confs are in enviroment.ts files.
+-- check all api keys (google maps / captcha and paypal)
 
-* adb-tools are installed
-* debug is enabled on your device
-* running **adb devices** prints out your phone code
-* the phone is switched on
 
-If everything's alright run **ionic cordova run android**
+## Run ##
 
-## Manage components ##
-Every component is shipped with one action button and a result box enabled by a ```test``` flag inside the controller.
+- run "npm install" for install all deps.
+- run "ionic serve" for local server
 
-## Component Events ##
-Every component, when success, fires a Event and a result:
 
-**QR Reader:** ```qr:read``` returns ```data:string```
+## Run Android ##
 
-**GPS Map:** ```map:loaded``` returns ```map:mapObject```
+- Install Android Platform
+-- adb-tools, android sdk, gradle required.
+-- run "ionic cordova platform add android" for adding android platform
+-- run "adb devices" for list usb connected android devices (need debug on device)
+-- run "ionic cordova run android" for build apk and run on device/emulator
 
-**Camera:** ```pic:loaded``` returns ```image:string(base64)```
+## Run on Ios ##
+
+- Install Ios Platform
+-- Mac osx, xcode required.
+-- run "ionic cordova platform add ios" for adding ios platform (xcode project included)
+-- run "ionic cordova build ios" for build from sources
+-- open generated xcode project and run/deploy to device/emulator
